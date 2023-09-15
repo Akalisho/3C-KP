@@ -5,6 +5,7 @@
 
 int main()
 {
+    // To coœ pisze na ekranie to, co napiszesz pod spodem
     std::cout << "Brawl Stars, Brawl Stars, Zadymiarze!!!\n";
 }
 
