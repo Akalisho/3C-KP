@@ -6,7 +6,8 @@
 int main()
 {
     // To coœ pisze na ekranie to, co napiszesz pod spodem
-    std::cout << "Brawl Stars, Brawl Stars, Zadymiarze!!!\n";
+    std::cout << "Kuba\n";
+    std::cout << "Pustul\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
