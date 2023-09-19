@@ -5,9 +5,17 @@
 
 int main()
 {
-    // To coœ pisze na ekranie to, co napiszesz pod spodem
-    std::cout << "Kuba\n";
-    std::cout << "Pustul\n";
+    // To coœ pisze na ekranie to, co napiszesz pod spodem (sta³e ³añcuchowe)
+    std::cout << "Lubie placki\n";
+    std::cout << "Ziemniaczane\n";
+    std::cout << "Fortnite\n";
+    std::cout << 'x';
+    // Przyk³ad sta³ej znakowej (to coœ, co mo¿na zmieniæ, chyba taka zmienna)
+    std::cout << '\n';
+    std::cout << 82; // (Sta³a ca³kowito-liczbowa)
+    std::cout << "\n";
+    std::cout << -2.5; // (Sta³a rzeczywista)
+    std::cout << "\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
