@@ -16,6 +16,7 @@ int main()
     std::cout << "\n";
     std::cout << -2.5; // (Sta³a rzeczywista)
     std::cout << "\n";
+    std::cout << "Pierwsza dana " << 254 << "kolejny tekst\n"; 
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
