@@ -9,8 +9,8 @@ void task1()
 	std::cout << "Podaj numer:\n";
 	int numberFromUser;
 	std::cin >> numberFromUser;
-	std::cout << "Podales: " << numberFromUser << "\n";
 
+	std::cout << "Podales: " << numberFromUser << "\n";
 }
 
 //Program obliczaj¹cy œredni¹ dwóch liczb
@@ -18,12 +18,15 @@ void task1()
 void task2()
 {
 	int firstNumber, secondNumber;
+
 	std::cout << "Podaj pierwsza liczbe\n";
 	std::cin >> firstNumber;
 	std::cout << "Podaj druga liczbe\n";
 	std::cin >> secondNumber;
+
 	int average;
 	average = (firstNumber + secondNumber) / 2;
+
 	std::cout << "Srednia wynosi: " << average << "\n";
 }
 
@@ -32,12 +35,15 @@ void task2()
 void task3()
 {
 	int firstSide, secondSide;
+
 	std::cout << "Podaj pierwszy bok\n";
 	std::cin >> firstSide;
 	std::cout << "Podaj drugi bok\n";
 	std::cin >> secondSide;
+
 	int area;
 	area = firstSide * secondSide;
+
 	std::cout << "Pole prostok¹ta wynosi: " << area << "\n";
 }
 
@@ -46,12 +52,15 @@ void task3()
 void task4()
 {
 	double beam, height;
+
 	std::cout << "Podaj promieñ: \n";
 	std::cin >> beam;
 	std::cout << "Podaj wysokoœæ: \n";
 	std::cin >> height;
+
 	double volume;
 	volume = (height / 3) * 3.1415 * (beam * beam);
+
 	std::cout << "Objêtoœæ sto¿ka wynosi: " << volume << "\n";
 }
 
@@ -60,8 +69,10 @@ void task4()
 void task5()
 {
 	double beam;
+
 	std::cout << "Podaj promieñ: \n";
 	std::cin >> beam;
+
 	std::cout << "Pole ko³a to: \n" << (beam * beam) * 3.1415;
 }
 
@@ -70,10 +81,12 @@ void task5()
 void task6()
 {
 	double SideA, SideB;
+
 	std::cout << "Podaj bok A: \n";
 	std::cin >> SideA;
 	std::cout << "Podaj bok B: \n";
 	std::cin >> SideB;
+
 	std::cout << "Wynik to: " << SideA * SideA + SideB * SideB;
 }
 
@@ -82,10 +95,12 @@ void task6()
 void task7()
 {
 	double base_sideB, height;
+
 	std::cout << "Podaj d³ugoœæ boku podstawy trójk¹ta: \n";
 	std::cin >> base_sideB;
 	std::cout << "Podaj wysokoœæ trójk¹ta: \n";
 	std::cin >> height;
+
 	std::cout << "Wynik to: " << (base_sideB * height) / 2;
 }
 
@@ -94,8 +109,10 @@ void task7()
 void task8()
 {
 	double beam, volume;
+
 	std::cout << "Podaj promieñ kuli: \n";
 	std::cin >> beam;
+
 	std::cout << "Wynik to: " << 1.33 * 3.1415 * (beam * beam * beam);
 }
 
@@ -104,12 +121,14 @@ void task8()
 void task9()
 {
 	double BaseA, BaseB, Height;
+
 	std::cout << "Podaj d³ugoœæ podstawy A:\n";
 	std::cin >> BaseA;
 	std::cout << "Podaj d³ugoœæ podstawy B:\n";
 	std::cin >> BaseB;
 	std::cout << "Podaj d³ugoœæ wysokoœci:\n";
 	std::cin >> Height;
+
 	std::cout << "Wynik to: " << ((BaseA + BaseB) * Height) / 2;
 }
 
@@ -117,20 +136,22 @@ void task9()
 
 void task10()
 {
-	double Mark1, Mark1weight, Mark2, Mark2weight, Mark3, Mark3weight;
+	double Mark1, Mark1Weight, Mark2, Mark2Weight, Mark3, Mark3Weight;
+
 	std::cout << "Podaj pierwsz¹ ocenê: \n";
 	std::cin >> Mark1;
 	std::cout << "Podaj wagê pierwszej oceny: \n";
-	std::cin >> Mark1weight;
+	std::cin >> Mark1Weight;
 	std::cout << "Podaj drug¹ ocenê: \n";
 	std::cin >> Mark2;
 	std::cout << "Podaj wagê drugiej oceny: \n";
-	std::cin >> Mark2weight;
+	std::cin >> Mark2Weight;
 	std::cout << "Podaj trzeci¹ ocenê: \n";
 	std::cin >> Mark3;
 	std::cout << "Podaj wagê trzeciej oceny: \n";
-	std::cin >> Mark3weight;
-	std::cout << "Œrednia wa¿ona z trzech ocen wynosi: " << ((Mark1weight * Mark1) + (Mark2weight * Mark2) + (Mark3weight * Mark3)) / (Mark1weight + Mark2weight + Mark3weight);
+	std::cin >> Mark3Weight;
+
+	std::cout << "Œrednia wa¿ona z trzech ocen wynosi: " << ((Mark1Weight * Mark1) + (Mark2Weight * Mark2) + (Mark3Weight * Mark3)) / (Mark1Weight + Mark2Weight + Mark3Weight);
 }
 
 //Stwórz program, który pobiera od u¿ytkownika d³ugoœæ w metrach i przelicza j¹ na centymetry i milimetry, wyœwietlaj¹c wynik.
@@ -138,10 +159,26 @@ void task10()
 void task11()
 {
 	double Meters;
+
 	std::cout << "Podaj iloœæ metrów do przeliczenia: \n";
 	std::cin >> Meters;
-	std::cout << "Wynik"
 
+	std::cout << "Wynik w centymetrach to: " << Meters * 100 << "\n";
+	std::cout << "Wynik w milimetrach to: " << Meters * 1000 << "\n";
+}
+
+//Napisz program, który konwertuje wprowadzon¹ kwotê w jednej walucie na inn¹, korzystaj¹c z okreœlonego kursu wymiany.
+
+void task12()
+{
+	double price_zl, converter;
+
+	std::cout << "Podaj wartoœæ w z³otówkach: \n";
+	std::cin >> price_zl;
+	std::cout << "Podaj wartoœæ przelicznika: \n";
+	std::cin >> converter;
+
+	std::cout << "Twój wynik to: " << price_zl * converter;
 }
 
 int main()
@@ -157,7 +194,8 @@ int main()
 	//task8();
 	//task9();
 	//task10();
-	task11();
+	//task11();
+	task12();
 }
 
 /*
