@@ -26,9 +26,6 @@ F - false
 T - true
 
 */
- //.Napisz program, który poprosi u¿ytkownika o podanie liczby od 1 do 7 i wyœwietli odpowiadaj¹cy mu dzieñ tygodnia.
- //.Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
- //.Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
  //.Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
  //.Napisz program, który poprosi u¿ytkownika o podanie masy cia³a(w kilogramach) i wzrostu(w metrach).
   //Na podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
@@ -145,6 +142,64 @@ void task7()
         std::cout << "Wartoœæ bezwzglêdna podanej liczby to: " << number;
 }
 
+//.Napisz program, który poprosi u¿ytkownika o podanie liczby od 1 do 7 i wyœwietli odpowiadaj¹cy mu dzieñ tygodnia
+
+void task8()
+{
+    int number;
+    std::cout << "Podaj liczbe: \n";
+    std::cin >> number;
+
+    if (number >= 1 && number <= 7)
+    {
+        if (number == 1)
+            std::cout << "Dzieñ tygodnia to Poniedzia³ek.";
+        if (number == 2)
+            std::cout << "Dzieñ tygodnia to Wtorek.";
+        if (number == 3)
+            std::cout << "Dzieñ tygodnia to Œroda.";
+        if (number == 4)
+            std::cout << "Dzieñ tygodnia to Czwartek.";
+        if (number == 5)
+            std::cout << "Dzieñ tygodnia to Pi¹tek.";
+        if (number == 6)
+            std::cout << "Dzieñ tygodnia to Sobota.";
+        if (number == 7)
+            std::cout << "Dzieñ tygodnia to Niedziela.";
+    }
+    else
+        std::cout << "Nie ma takiego dnia tygodnia.";
+}
+
+//.Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i wyœwietli wiêksz¹ z nich.
+
+void task9()
+{
+    int firstNumber, secondNumber;
+    std::cout << "Podaj pierwsz¹ liczbê: \n";
+    std::cin >> firstNumber;
+    std::cout << "Podaj drug¹ liczbê: \n";
+    std::cin >> secondNumber;
+
+    if (firstNumber > secondNumber)
+        std::cout << "Wiêksza liczba to: " << firstNumber;
+    else
+        std::cout << "Wiêksza liczba to: " << secondNumber;
+}
+
+//.Napisz program, który poprosi u¿ytkownika o podanie roku i sprawdzi, czy jest to rok przestêpny.Wyœwietl odpowiedni komunikat.
+
+void task10()
+{
+    int year;
+    std::cout << "Podaj rok: \n";
+    std::cin >> year;
+    
+    if (year > 0 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+        std::cout << "Rok jest przestêpny.";
+    else
+        std::cout << "Rok nie jest przestêpny.";
+}
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -154,6 +209,9 @@ int main()
     //task4();
     //task5();
     //task6();
-    task7();
+    //task7();
+    //task8();
+    //task9();
+    task10();
 }
     
