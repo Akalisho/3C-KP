@@ -26,11 +26,7 @@ F - false
 T - true
 
 */
- //.Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
- //.Napisz program, który poprosi u¿ytkownika o podanie masy cia³a(w kilogramach) i wzrostu(w metrach).
-  //Na podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
-//* .Napisz program, który poprosi u¿ytkownika o podanie d³ugoœci trzech odcinków i sprawdzi, czy mo¿na zbudowaæ z nich trójk¹t.Wyœwietl odpowiedni komunikat.
-//* .Napisz program, który poprosi u¿ytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeœli jest to mo¿liwe.Wyœwietl wynik lub odpowiedni komunikat, jeœli liczba jest ujemna.
+
 //* .Program sprawdzaj¹cy czy podana data jest poprawna(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
 
 //Napisz program, który wyœwietli informacje, czy liczba jest dodatnia czy nie.
@@ -200,6 +196,102 @@ void task10()
     else
         std::cout << "Rok nie jest przestêpny.";
 }
+
+//.Napisz program, który poprosi u¿ytkownika o podanie liczby ca³kowitej i sprawdzi, czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyœwietl odpowiedni komunikat.
+
+void task11()
+{
+    int number;
+    std::cout << "Podaj liczbê: \n";
+    std::cin >> number;
+
+    if (number % 3 == 0)
+    {
+        if (number % 5 == 0)
+            std::cout << "Podana liczba dzieli siê przez 3 i 5.";
+        else
+            std::cout << "Podana liczba siê nie dzieli.";
+    }
+    else
+        std::cout << "Podana liczba siê nie dzieli.";
+}
+
+/*Na  podstawie tych danych oblicz wskaŸnik BMI(Body Mass Index) i wyœwietl odpowiedni komunikat informuj¹cy o stanie zdrowia.
+poni¿ej 16 - wyg³odzenie
+16 - 16.99 - wychudzenie
+17 - 18.49 - niedowagê
+18.5 - 24.99 - wagê prawid³ow¹
+25.0 - 29.9 - nadwagê
+30.0 - 34.99 - I stopieñ oty³oœci
+35.0 - 39.99 - II stopieñ oty³oœci
+powy¿ej 40.0 - oty³oœæ skrajn¹
+*/
+
+void task12()
+{
+    int mass;
+    double height, bmi;
+    std::cout << "Podaj swoj¹ wysokoœæ w metrach: \n";
+    std::cin >> height;
+    std::cout << "Podaj swoj¹  w kilogramach: \n";
+    std::cin >> mass;
+    bmi = mass / (height * height);
+
+        if (bmi < 16)
+            std::cout << "Z twojego BMI wychodzi wyg³odzenie";
+        else
+            if (bmi >= 16 && bmi <= 16.99)
+                std::cout << "Z twojego BMI wychodzi wychudzenie";
+            else
+                if (bmi >= 17 && bmi <= 18.49)
+                    std::cout << "Z twojego BMI wychodzi niedowaga";
+                else
+                    if (bmi >= 18.5 && bmi <= 24.99)
+                        std::cout << "Z twojego BMI wychodzi waga prawid³owa";
+                    else
+                        if (bmi >= 25.0 && bmi <= 29.99)
+                            std::cout << "Z twojego BMI wychodzi nadwaga";
+                        else
+                            if (bmi >= 30 && bmi <= 34.99)
+                                std::cout << "Z twojego BMI wychodzi I stopieñ oty³oœci";
+                            else
+                                if (bmi >= 35 && bmi <= 39.99)
+                                    std::cout << "Z twojego BMI wychodzi II stopieñ oty³oœci";
+                                else
+                                    if (bmi > 40)
+                                        std::cout << "Z twojego BMI wychodzi oty³oœæ skrajna";
+    
+}
+
+//* .Napisz program, który poprosi u¿ytkownika o podanie d³ugoœci trzech odcinków i sprawdzi, czy mo¿na zbudowaæ z nich trójk¹t.Wyœwietl odpowiedni komunikat.
+
+void task13()
+{
+    int firstSide, secondSide, thirdSide;
+    std::cout << "Podaj d³ugoœæ pierwszego boku trójk¹ta: \n";
+    std::cin >> firstSide;
+    std::cout << "Podaj d³ugoœæ drugiego boku trójk¹ta: \n";
+    std::cin >> secondSide;
+    std::cout << "Podaj d³ugoœæ trzeciego boku trójk¹ta: \n";
+    std::cin >> thirdSide;
+    if (firstSide > (secondSide + thirdSide))
+        std::cout << "Mo¿na zbudowaæ trójk¹t.";
+    else
+        std::cout << "Nie mo¿na zbudowaæ trójk¹ta.";
+}
+
+//* .Napisz program, który poprosi u¿ytkownika o podanie liczby dodatniej i obliczy jej pierwiastek kwadratowy, jeœli jest to mo¿liwe.Wyœwietl wynik lub odpowiedni komunikat, jeœli liczba jest ujemna.
+
+void task14()
+{
+    int number;
+    std::cout << "Podaj liczbê: \n";
+    std::cin >> number;
+
+    if (number > 0)
+
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -212,6 +304,10 @@ int main()
     //task7();
     //task8();
     //task9();
-    task10();
+    //task10();
+    //task11();
+    //task12();
+    //task13();
+    task14();
 }
     
