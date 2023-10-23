@@ -289,7 +289,6 @@ void task14()
     std::cin >> number;
 
     if (number > 0)
-
 }
 
 int main()
