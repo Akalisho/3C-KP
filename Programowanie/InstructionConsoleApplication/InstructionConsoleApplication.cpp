@@ -27,8 +27,6 @@ T - true
 
 */
 
-//* .Program sprawdzaj¹cy czy podana data jest poprawna(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-
 //Napisz program, który wyœwietli informacje, czy liczba jest dodatnia czy nie.
 
 void task1()
@@ -91,7 +89,7 @@ void task4()
         std::cout << "Wynik dzielenia: " << quoitent << "\n";
     }
     else
-        std::cout << "Dzieleniew przez zero!!!\n";
+        std::cout << "Dzielenie przez zero!!!\n";
 }
 
 //.Napisz program, który poprosi u¿ytkownika o podanie dwóch liczb ca³kowitych i sprawdzi, czy s¹ one równe. Wyœwietl odpowiedni komunikat.
@@ -236,7 +234,8 @@ void task12()
     std::cout << "Podaj swoj¹  w kilogramach: \n";
     std::cin >> mass;
     bmi = mass / (height * height);
-
+    if (mass > 0 && height > 0)
+    {
         if (bmi < 16)
             std::cout << "Z twojego BMI wychodzi wyg³odzenie";
         else
@@ -260,7 +259,9 @@ void task12()
                                 else
                                     if (bmi > 40)
                                         std::cout << "Z twojego BMI wychodzi oty³oœæ skrajna";
-    
+    }
+    else
+        std::cout << "Jedna z podanych wartoœci jest ujemna.";
 }
 
 //* .Napisz program, który poprosi u¿ytkownika o podanie d³ugoœci trzech odcinków i sprawdzi, czy mo¿na zbudowaæ z nich trójk¹t.Wyœwietl odpowiedni komunikat.
@@ -274,7 +275,7 @@ void task13()
     std::cin >> secondSide;
     std::cout << "Podaj d³ugoœæ trzeciego boku trójk¹ta: \n";
     std::cin >> thirdSide;
-    if (firstSide > (secondSide + thirdSide))
+    if (firstSide > (secondSide + thirdSide) || secondSide > (firstSide + thirdSide) || thirdSide > (firstSide + secondSide))
         std::cout << "Mo¿na zbudowaæ trójk¹t.";
     else
         std::cout << "Nie mo¿na zbudowaæ trójk¹ta.";
@@ -284,29 +285,47 @@ void task13()
 
 void task14()
 {
-    int number;
+    int number, root;
     std::cout << "Podaj liczbê: \n";
     std::cin >> number;
+    root = sqrt(number);
 
     if (number > 0)
+    {
+        std::cout << "Pierwiastek kwadratowy podanej liczby to: " << root;
+    }
+    else
+        std::cout << "Nie da siê obliczyæ pierwiastka liczby ujemnej.";
+}
+
+//* .Program sprawdzaj¹cy czy podana data jest poprawna(np.sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
+
+void task15()
+{
+    int dayNumber, monthNumber, yearNumber;
+    std::cout << "Podaj dzieñ: \n";
+    std::cin >> dayNumber;
+    std::cout << "Podaj miesi¹c: \n";
+    std::cin >> monthNumber;
+    std::cout << "Podaj rok: \n";
+    std::cin >> yearNumber;
+
+    if (dayNumber >= 1 && dayNumber <= 31
+        && monthNumber >= 1 && monthNumber <= 12
+        && yearNumber != 0
+
+        && (( monthNumber == 4 || monthNumber == 6 || monthNumber == 9 || monthNumber == 11) && dayNumber != 31)
+
+        && monthNumber == 2 && (dayNumber >= 28
+            || dayNumber == 29 && ( yearNumber % 4 == 0 && yearNumber % 100 != 0 && yearNumber % 400 == 0))
+        )
+        std::cout << "Data jest poprawna.";
+    else
+        std::cout << "Data nie jest poprawna.";
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    //task1();
-    //task2();
-    //task3();
-    //task4();
-    //task5();
-    //task6();
-    //task7();
-    //task8();
-    //task9();
-    //task10();
-    //task11();
-    //task12();
-    //task13();
-    task14();
+    task15();
 }
-    
