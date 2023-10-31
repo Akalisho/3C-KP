@@ -354,23 +354,6 @@ void task15()
 
 //Napisz program, który ma pobraæ od u¿ytkownika liczbê dodatni¹. Zabezpiecz program przed pobraniem liczby ujemnej.
 
-void task16()
-{
-	int number;
-	std::cout << "Podaj liczbê: \n";
-	std::cin >> number;
-
-	if (number < 0)
-	{
-		std::cout << "Podaj liczbê: \n";
-		std::cin >> number;
-	}
-	else
-		std::cout << "Liczba dodatnia pobrana od u¿ytkownika: " << number << "\n";
-	
-
-}
-
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
