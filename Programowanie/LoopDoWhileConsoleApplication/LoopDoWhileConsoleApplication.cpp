@@ -44,7 +44,22 @@ void task2()
 	std::cout << "Liczba dodatnia pobrana od uzytkownika " << numberFromUser << "\n";
 }
 
+//Napisz program, który wylosuje liczbe, a u¿ytkownik bêdzie musia³ zgadn¹æ.
+
+void task3()
+{
+	do
+	{
+		int randomNumber, numberFromUser;
+		randomNumber = rand(10);
+		std::cout << randomNumber;
+
+	} while 
+
+	std::cout << "Zgad³eœ liczbe!!!";
+}
+
 int main()
 {
-	task2();
+	task3();
 }
