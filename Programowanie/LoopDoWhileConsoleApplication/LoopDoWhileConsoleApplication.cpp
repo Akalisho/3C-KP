@@ -48,18 +48,39 @@ void task2()
 
 void task3()
 {
+	const int LOWER_RANGE = 1;
+	const int UPPER_RANGE = 100;
+	srand(time(NULL));
+	int randomNumber = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+	int numberFromUser;
 	do
 	{
-		int randomNumber, numberFromUser;
-		randomNumber = rand(10);
-		std::cout << randomNumber;
+		std::cout << "Podaj liczbe: \n";
+		std::cin >> numberFromUser;
+		if (numberFromUser > randomNumber)
+			std::cout << "Mniej.\n";
+		if (numberFromUser < randomNumber)
+			std::cout << "Wiecej.\n";
+	} while (numberFromUser != randomNumber);
 
-	} while 
+	std::cout << "Gratulacje u¿ytkowniku!! Zainstalowa³eœ Albion Online!!";
+}
 
-	std::cout << "Zgad³eœ liczbe!!!";
+//Napisz program wyœwietlaj¹cy liczby z przedzia³u <1;6>
+void task4()
+{
+	unsigned long long upperRange;
+	unsigned long long currentNumber = 0;
+	std::cout << "Podaj zakres gorny wiekszy badz rowny 1: \n";
+	std::cin >> upperRange;
+	do
+	{
+		currentNumber = currentNumber + 1;
+		std::cout << currentNumber << ", ";
+	} while (upperRange > currentNumber);
 }
 
 int main()
 {
-	task3();
+	task4();
 }
