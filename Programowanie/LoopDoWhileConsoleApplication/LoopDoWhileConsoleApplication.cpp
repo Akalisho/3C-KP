@@ -75,7 +75,10 @@ void task4()
 	std::cin >> upperRange;
 	do
 	{
-		currentNumber = currentNumber + 1;
+		//currentNumber = currentNumber + 1
+		//currentNumber += 1
+		//currentNumber++
+		++currentNumber 
 		std::cout << currentNumber << ", ";
 	} while (upperRange > currentNumber);
 }
