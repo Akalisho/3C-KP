@@ -83,7 +83,13 @@ void task4()
 	} while (upperRange > currentNumber);
 }
 
+//Napisz program, który policzy sumê cyfr podanej przez u¿ytkownika liczby.
+void task5()
+{
+
+}
+
 int main()
 {
-	task4();
+	task5();
 }
