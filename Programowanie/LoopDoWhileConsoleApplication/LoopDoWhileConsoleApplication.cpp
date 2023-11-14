@@ -34,7 +34,7 @@ void task1()
 void task2()
 {
 	int numberFromUser;
-	
+
 	do
 	{
 		std::cout << "Podaj liczbê doodatni¹:\n";
@@ -78,7 +78,7 @@ void task4()
 		//currentNumber = currentNumber + 1
 		//currentNumber += 1
 		//currentNumber++
-		++currentNumber 
+		++currentNumber;
 		std::cout << currentNumber << ", ";
 	} while (upperRange > currentNumber);
 }
@@ -86,10 +86,77 @@ void task4()
 //Napisz program, który policzy sumê cyfr podanej przez u¿ytkownika liczby.
 void task5()
 {
+	int number;
+	std::cout << "Podaj liczbê\n";
+	std::cin >> number;
 
+	int sum = 0;
+	int rest;
+
+	/*
+	rest = number % 10;
+	sum = sum + rest;
+	number = number / 10;
+	if (number != 0)
+	{
+		rest = number % 10;
+		sum = sum + rest;
+		number = number / 10;
+		if (number != 0)
+		{
+			rest = number % 10;
+			sum = sum + rest;
+			number = number / 10;
+			if (number != 0)
+			{
+				rest = number % 10;
+				sum = sum + rest;
+				number = number / 10;
+				//if (number != 0) ...
+			}
+		}
+	}
+	*/
+
+	do
+	{
+		rest = number % 10;
+		sum = sum + rest;
+		number = number / 10;
+	} while (number != 0);
+
+	std::cout << "Suma " << sum << "\n";
+}
+
+//Poproœ u¿ytkownika o podawanie liczb, a¿ wprowadzi zero.
+//Oblicz sumê oraz œredni¹ arytmetyczn¹.
+
+void task6()
+{
+	int number, i;
+	double sum;
+	sum = 0;
+	i = 0;
+	do
+	{
+		std::cout << "Podaj liczbe: \n";
+		std::cin >> number;
+		sum += number;
+		i += 1;
+	} while (number != 0);
+
+	std::cout << "Suma to: " << sum << "\n";
+	std::cout << "Œrednia arytmetyczna to: " << sum / i << "\n";
+}
+
+//
+
+void task7()
+{
+	
 }
 
 int main()
 {
-	task5();
+	task6();
 }
