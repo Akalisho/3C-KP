@@ -149,14 +149,30 @@ void task6()
 	std::cout << "Œrednia arytmetyczna to: " << sum / i << "\n";
 }
 
-//
+//Napisz program, który poprosi u¿ytkownika o podanie dowolnej liczby ca³kowitej.
+//Nastêpnie program powinien obliczyæ i wyœwietliæ liczbê cyfr.
 
 void task7()
 {
-	
+	int number;
+	double numberOfNumbers = 0;
+	double rest;
+	double sum = 0;
+	std::cout << "Podaj liczbe.\n";
+	std::cin >> number;
+
+	do
+	{
+		rest = number % 10;
+		sum = sum + rest;
+		number = number / 10;
+		numberOfNumbers++;
+	} while (number != 0);
+
+	std::cout << "Ilosc cyfr w podanej liczbie to: " << numberOfNumbers;
 }
 
 int main()
 {
-	task6();
+	task7();
 }
