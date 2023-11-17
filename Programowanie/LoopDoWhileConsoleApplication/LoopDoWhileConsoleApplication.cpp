@@ -154,17 +154,13 @@ void task6()
 
 void task7()
 {
-	int number;
+	unsigned long long number;
 	double numberOfNumbers = 0;
-	double rest;
-	double sum = 0;
 	std::cout << "Podaj liczbe.\n";
 	std::cin >> number;
 
 	do
 	{
-		rest = number % 10;
-		sum = sum + rest;
 		number = number / 10;
 		numberOfNumbers++;
 	} while (number != 0);
