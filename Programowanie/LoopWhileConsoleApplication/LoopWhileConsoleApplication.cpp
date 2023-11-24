@@ -69,7 +69,7 @@ void task2()
 		nwd--;
 	}
 
-	cout << "NWD = " << nwd << "\n";
+	cout << "NWD = " << nwd << "\n";+
 }
 
 int main()
