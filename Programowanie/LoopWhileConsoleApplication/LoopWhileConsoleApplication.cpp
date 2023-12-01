@@ -113,7 +113,29 @@ void task3()
 	cout << "Podaj liczbe: \n";
 	cin >> number;
 
-	while ()
+	//wersja 1:
+
+	int tmpNumber = number;
+	int numberOfDigit = 1;
+		while (tmpNumber >= 10)
+	{
+		numberOfDigit++;
+		tmpNumber = tmpNumber / 10;
+	}
+
+	//liczê 10 do potêgi numberOfDigit - 1
+	int leftDivided = 1;
+	while (numberOfDigit != 1)
+	{
+		leftDivided *= 10;
+		numberOfDigit--;
+	}
+
+	int rightDivided = 10;
+	int leftNumber = number;
+	int rightNumber = number;
+
+	while (leftNumber > 10)
 	{
 
 	}
