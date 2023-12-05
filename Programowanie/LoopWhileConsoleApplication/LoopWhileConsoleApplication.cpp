@@ -156,12 +156,44 @@ void task3()
 		std::cout << "Liczba jest palindromem\n";
 	else
 		std::cout << "Liczba nie jest palindromem\n";
+}
+
+//Napisz program, który wyœwietli "Hello World" tyle razy, ile chce u¿ytkownik.
+
+void task4()
+{
+	int howManyTimes;
+	cout << "Podaj ile razy wyœwietliæ:\n";
+	cin >> howManyTimes;
+
+	int i = 0;
+
+	while (i != howManyTimes)
+	{
+		cout << "Hello World!!!\n";
+		i++;
+	}
+}
+
+//Napisz program który wyœwietli liczby parzyste do podanej przez u¿ytkownika liczby.
+
+void task5()
+{
+	int upperRange;
+	cout << "Podaj górn¹ granicê do wyœwietlenia.\n";
+	cin >> upperRange;
+	
+	int i = 0;
+	while (i <= upperRange)
+	{
+		cout << i << "\n";
+		i += 2;
 	}
 }
 
 int main()
 {
-	task3();
+	task5();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

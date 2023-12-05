@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopDoWhileConsoleApplicati
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopWhileConsoleApplication", "LoopWhileConsoleApplication\LoopWhileConsoleApplication.vcxproj", "{8613A519-E298-4969-B35C-7F7F36A376F3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopForConsoleApplication", "LoopForConsoleApplication\LoopForConsoleApplication.vcxproj", "{81A7876A-928D-47E5-BB37-602B615F5CCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -65,6 +67,14 @@ Global
 		{8613A519-E298-4969-B35C-7F7F36A376F3}.Release|x64.Build.0 = Release|x64
 		{8613A519-E298-4969-B35C-7F7F36A376F3}.Release|x86.ActiveCfg = Release|Win32
 		{8613A519-E298-4969-B35C-7F7F36A376F3}.Release|x86.Build.0 = Release|Win32
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Debug|x64.ActiveCfg = Debug|x64
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Debug|x64.Build.0 = Debug|x64
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Debug|x86.ActiveCfg = Debug|Win32
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Debug|x86.Build.0 = Debug|Win32
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Release|x64.ActiveCfg = Release|x64
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Release|x64.Build.0 = Release|x64
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Release|x86.ActiveCfg = Release|Win32
+		{81A7876A-928D-47E5-BB37-602B615F5CCA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +85,7 @@ Global
 		{DCCE89BA-5312-45BA-9A2E-8F652BB164A6} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
 		{139C2150-EB7F-4FDF-AC2D-3E3D4088E365} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
 		{8613A519-E298-4969-B35C-7F7F36A376F3} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
+		{81A7876A-928D-47E5-BB37-602B615F5CCA} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F097B48F-B591-4473-B32E-9C089190C89B}
