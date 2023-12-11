@@ -2,12 +2,6 @@
 using namespace std;
 
 /*
-//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
-//Program, kóry wyświetli poniższe cztery zwory:
-	****       54321        121212        122333
-	***        65432        212121        223334444
-	**         76543        121212        333444455555
-	*          87654        212121        444455555666666
 * Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
 * Rozkład liczby na czynniki pierwsze
 */
@@ -102,19 +96,18 @@ void task6()
 	cout << "Podaj liczbe: \n";
 	cin >> number;
 
-	for (int i = 1; i != number + 1; i++)
+	for (int i = 1; i != 11; i++)
 	{
 		sum *= i;
+		cout << sum;
 	}
-
-	cout << sum;
 }
 
 //Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
 
 void task7()
 {
-	for (int i = 1; i <= 10; i++)
+	for (int i = 1; i != 11; i++)
 	{
 		cout << i << "!, ";
 	}
@@ -148,12 +141,46 @@ void task9()
 
 void task10()
 {
-	int number;
+	int i = 0;
+	int sum = 0;
+	for (int number = 1; number <= 10; number++)
+	{
+		i = number * number;
+		sum += i;
+	}
 
+	cout << sum;
+}
+
+//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu 
+// (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+
+void task11()
+{
+	int number = 0;
+	int firstNumber = 1;
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << firstNumber << ", ";
+		cout << number << ", ";
+		firstNumber += number;
+		number += firstNumber;
+	}
+}
+
+//Program, kóry wyświetli poniższe cztery zwory:
+//****  54321        121212        122333
+//***   65432        212121        223334444
+//**    76543        121212        333444455555
+//*     87654        212121        444455555666666
+
+void task12()
+{
 
 }
 
 int main()
 {
-	task10();
+	task12();
 }
