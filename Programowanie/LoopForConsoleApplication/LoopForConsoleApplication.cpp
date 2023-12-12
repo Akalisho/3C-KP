@@ -177,10 +177,36 @@ void task11()
 
 void task12()
 {
+	const int NUMBER_OF_LINES = 8;
+	for (int lineNumber = 0; lineNumber < NUMBER_OF_LINES; lineNumber++)
+	{
+		for (int i = 0; i < NUMBER_OF_LINES - lineNumber; i++)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}
+}
+
+void task13()
+{
+	const int NUMBER_OF_LINES = 4;
+	for (int lineNumber = 0; lineNumber < NUMBER_OF_LINES; lineNumber++)
+	{
+		for (int i = 5; i > 0; i--)
+		{
+			cout << i + lineNumber;
+		}
+		cout << "\n";
+	}
+}
+
+void task14()
+{
 
 }
 
 int main()
 {
-	task12();
+	task14();
 }
