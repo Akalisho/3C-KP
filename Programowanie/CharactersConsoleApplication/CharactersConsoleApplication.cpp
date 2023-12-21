@@ -152,17 +152,14 @@ void task8()
 
 void task9()
 {
-    bool isPalindrome;
-    string word;
+    string wordFromUser;
     cout << "Podaj wyraz: \n";
-    cin >> word;
+    cin >> wordFromUser;
 
-    string tmpWord = word;
-    int i = 1;
-    while (tmpWord >= 10)
+    string reverseWord = "";
+    for (int i = 0; wordFromUser.length() ; i++)
     {
-        i++;
-        tmpWord = tmpWord / 10;
+        
     }
 
     if (isPalindrome)
