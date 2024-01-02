@@ -78,7 +78,6 @@ void task5()
     cout << "Ma³ych liter 'a' jest: " << numberOfCharacters;
 }
 
-//Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami(czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka")
 //Program wyci¹gaj¹cy informacje z numeru PESEL
 //Program implementuj¹cy algorytm szyfrowania Cezara(proste szyfrowanie, w którym ka¿dy znak w tekœcie jest zastêpowany innym znakiem, przesuniêtym o sta³¹ liczbê pozycji w alfabecie).
 //Program który na wejœciu przyjmie równanie a na wyjœciu da równanie w odwrotnej notacji polskiej ONP.Np.na wejœciu 2 + 3 * 4 na wyjœcu da 234 * +
@@ -152,26 +151,54 @@ void task8()
 
 void task9()
 {
-    string wordFromUser;
-    cout << "Podaj wyraz: \n";
-    cin >> wordFromUser;
+    std::string textFromUser;
+    std::cout << "Podaj tekst\n";
+    std::cin >> textFromUser;
 
-    string reverseWord = "";
-    for (int i = 0; wordFromUser.length() ; i++)
+    //wersja 1
+
+    std::string reverseText = "";
+
+    for (int i = textFromUser.length() - 1; i >= 0; i--)
     {
-        
+        reverseText = reverseText + textFromUser[i];
     }
 
-    if (isPalindrome)
-        cout << "Wyraz jest palindromem.\n";
+    /*for (int i = 0; i < textFromUser.length() - 1; i++)
+    {
+        reverseText = reverseText + textFromUser[i];
+    }*/
+
+    //wersja 2
+
+    bool isPalindrome = true;
+
+    for (int signFromBegining = 0, signFormEnd = textFromUser.length() - 1; signFromBegining < signFormEnd; signFromBegining++, signFormEnd--)
+    {
+        if (textFromUser[signFromBegining] != textFromUser[signFormEnd])
+        {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    if (textFromUser == reverseText)
+        std::cout << "Ten tekst jest palindromem\n";
     else
-        cout << "Wyraz nie jest palindromem.\n";
+        std::cout << "Ten tekst nie jest palindromem\n";
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task9();
+    task10();
+}
+
+//Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami(czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka")
+
+void task10()
+{
+
 }
 
 /*
