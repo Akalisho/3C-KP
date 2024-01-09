@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Kolekcje", "03.Kolekcje"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharactersConsoleApplication", "CharactersConsoleApplication\CharactersConsoleApplication.vcxproj", "{195E1FF5-F847-4497-904C-AF84EBABC260}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArrayConsoleApplication", "ArrayConsoleApplication\ArrayConsoleApplication.vcxproj", "{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -87,6 +89,14 @@ Global
 		{195E1FF5-F847-4497-904C-AF84EBABC260}.Release|x64.Build.0 = Release|x64
 		{195E1FF5-F847-4497-904C-AF84EBABC260}.Release|x86.ActiveCfg = Release|Win32
 		{195E1FF5-F847-4497-904C-AF84EBABC260}.Release|x86.Build.0 = Release|Win32
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Debug|x64.ActiveCfg = Debug|x64
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Debug|x64.Build.0 = Debug|x64
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Debug|x86.ActiveCfg = Debug|Win32
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Debug|x86.Build.0 = Debug|Win32
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Release|x64.ActiveCfg = Release|x64
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Release|x64.Build.0 = Release|x64
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Release|x86.ActiveCfg = Release|Win32
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +109,7 @@ Global
 		{8613A519-E298-4969-B35C-7F7F36A376F3} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
 		{81A7876A-928D-47E5-BB37-602B615F5CCA} = {4D1EB96A-B38E-48B7-A921-48B9AD343308}
 		{195E1FF5-F847-4497-904C-AF84EBABC260} = {FED6B839-3B55-4538-B588-B2F477E89550}
+		{D25CDAE0-B32B-4906-9E00-5992E4C9D65C} = {FED6B839-3B55-4538-B588-B2F477E89550}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F097B48F-B591-4473-B32E-9C089190C89B}
