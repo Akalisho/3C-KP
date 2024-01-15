@@ -63,8 +63,26 @@ void task2()
     cout << "Œrednia wynosi: " << avg << "\n";
 }
 
+//Napisz program, który uzupe³ni tablicê liczbami losowymi, a  nastêpnie znajdzie minimum i maksimum.
+
+void task3()
+{
+    const unsigned short LOWER_RANGE = 0;
+    const unsigned short UPPER_RANGE = 100;
+    const unsigned ARRAY_SIZE = 5;
+    int numbers[ARRAY_SIZE] = {};
+    srand(time(0));
+    cout << "Wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task2();
+    task3();
 }
