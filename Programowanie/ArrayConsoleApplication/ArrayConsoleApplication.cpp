@@ -69,7 +69,7 @@ void task3()
 {
     const unsigned short LOWER_RANGE = 0;
     const unsigned short UPPER_RANGE = 100;
-    const unsigned ARRAY_SIZE = 5;
+    const unsigned ARRAY_SIZE = 10;
     int numbers[ARRAY_SIZE] = {};
     srand(time(0));
     cout << "Wylosowane liczby:\n";
@@ -79,10 +79,54 @@ void task3()
         cout << numbers[i] << ", ";
     }
     cout << "\n";
+
+    //---------------------------------------------------------------------------
+
+    int max = numbers[0];
+    for (int i = 1; i < ARRAY_SIZE; i++)
+    {
+        if (numbers[i] > max)
+            max = numbers[i];
+    }
+    cout << "Max to: " << max << "\n";
+
+    int min = numbers[0];
+    for (int i = 1; i < ARRAY_SIZE; i++)
+    {
+        if (numbers[i] < min)
+            min = numbers[i];
+    }
+    cout << "Min to: " << min << "\n";
+}
+
+//Napisz program, który wyznaczy wszystkie liczby pierwsze od 2 do zadeklarowanego zakresu.
+
+void task4()
+{
+    const long long UPPER_RANGE = 70;
+
+    //wersja 1
+
+    for (long long numberToCheck = 2; numberToCheck <= UPPER_RANGE; numberToCheck++)
+    {
+        bool isPrime = true;
+        for (long long i = 2; i <= numberToCheck; i++)
+        {
+            if (numberToCheck % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime /*== true*/)
+            cout << numberToCheck << "\n";
+    }
+    cout << "Gotowe\n";
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task3();
+    task4();
 }
