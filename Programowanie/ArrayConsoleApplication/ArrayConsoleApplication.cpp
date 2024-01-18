@@ -123,6 +123,10 @@ void task4()
             cout << numberToCheck << "\n";
     }
     cout << "Gotowe\n";
+
+    //wersja 2
+
+
 }
 
 int main()
