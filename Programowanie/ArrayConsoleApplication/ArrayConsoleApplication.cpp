@@ -126,11 +126,51 @@ void task4()
 
     //wersja 2
 
+    bool sieveOfEratosthenes[UPPER_RANGE + 1];
 
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        sieveOfEratosthenes[i] = true;
+    }
+
+    for (unsigned long long number = 2; number <= UPPER_RANGE; number++)
+    {
+        if (sieveOfEratosthenes[number] /*== true*/)
+        {
+            for (long long numberToCrossOut = number + number; numberToCrossOut <= UPPER_RANGE; numberToCrossOut = numberToCrossOut + number)
+                sieveOfEratosthenes[numberToCrossOut] = false;
+        }
+    }
+
+    for (unsigned long long i = 2; i <= UPPER_RANGE; i++)
+    {
+        if (sieveOfEratosthenes[i] /*== true*/)
+            std::cout << i << ", ";
+    }
+    std::cout << "\n";
+}
+
+//Napisz program, który wczyta numer dnia tygodnia, a nastêpnie wyœwietli nazwê tego dnia.
+
+void task5()
+{
+    int numberOfWeek;
+    cout << "Podaj numer dnia tygodnia:\n";
+    cin >> numberOfWeek;
+
+    std::string dayNames[] = { "Poniedzia³ek", "Wtorek", "Œroda", "Czwartek", "Pi¹tek", "Sobota", "Niedziela" };
+    //dayNames[0] = "Poniedzia³ek";
+    //dayNames[1] = "Wtorek";
+    //kontynuacja dni
+
+    if (numberOfWeek >= 0 && numberOfWeek <= 6)
+        cout << "Ten dzieñ to: " << dayNames[numberOfWeek] << "\n";
+    else
+        cout << "Niepoprawny dzieñ.\n";
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task4();
+    task5();
 }
