@@ -65,7 +65,7 @@ void task2()
 
 //Napisz program, który uzupe³ni tablicê liczbami losowymi, a  nastêpnie znajdzie minimum i maksimum.
 
-void task3()
+void task3() 
 {
     const unsigned short LOWER_RANGE = 0;
     const unsigned short UPPER_RANGE = 100;
@@ -169,8 +169,48 @@ void task5()
         cout << "Niepoprawny dzieñ.\n";
 }
 
+//Napisz program, który posortuje tablice liczb.
+
+void task6()
+{
+    const unsigned short LOWER_RANGE = 0;
+    const unsigned short UPPER_RANGE = 70;
+    const unsigned ARRAY_SIZE = 10;
+    int numbers[ARRAY_SIZE] = {};
+
+    srand(time(0));
+
+    cout << "Wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j > ARRAY_SIZE; j++)
+        {
+            if (numbers[j] < numbers[minIndex])
+                minIndex = j;
+        }
+
+        int tmp = numbers[minIndex];
+        numbers[minIndex] = numbers[i];
+        numbers[i] = tmp;
+    }
+    cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task5();
+    task6();
 }
