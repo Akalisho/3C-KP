@@ -9,19 +9,19 @@ void task1()
     const unsigned short ARRAY_SIZE = 5;
     //std::cin >> ARRAY_SIZE; //Jest b³¹d, sta³a nie mo¿e byæ u¿yta w cin, bo to dla zmiennych.
     int numbers[ARRAY_SIZE];
-    //numbers[2] = 70;
+    //numbers1[2] = 70;
 
     /*
     cout << "Podaj dan¹:\n";
-    cin >> numbers[0];
+    cin >> numbers1[0];
     cout << "Podaj dan¹:\n";
-    cin >> numbers[1];
+    cin >> numbers1[1];
     cout << "Podaj dan¹:\n";
-    cin >> numbers[2];
+    cin >> numbers1[2];
     cout << "Podaj dan¹:\n";
-    cin >> numbers[3];
+    cin >> numbers1[3];
     cout << "Podaj dan¹:\n";
-    cin >> numbers[4];
+    cin >> numbers1[4];
     */
 
     for (int i = 0; i < ARRAY_SIZE; i++)
@@ -209,8 +209,89 @@ void task6()
     cout << "\n";
 }
 
+//Napisz program, który posortuje tablice liczb sposobem przez wstawianie.
+
+void task7()
+{
+    const unsigned short LOWER_RANGE = 0;
+    const unsigned short UPPER_RANGE = 70;
+    const unsigned ARRAY_SIZE = 10;
+    int numbers[ARRAY_SIZE] = {};
+
+    srand(time(0));
+
+    cout << "Wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    { 
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+
+    for (int i = 1; i < ARRAY_SIZE; i++)
+    {
+        int pom = numbers[i];
+
+        int j;
+        for (j = i - 1; j >= 0 && numbers[j] > pom; j--)
+        {
+            numbers[j + 1] = numbers[j];
+        }
+        numbers[j + 1] = pom;
+    }
+
+    cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cout << numbers[i] << ", ";
+    }
+    cout << "\n";
+}
+
+//Napisz program, który posortuje tablice liczb sposobem b¹belkowym.
+
+void task8()
+{
+    const unsigned short LOWER_RANGE = 0;
+    const unsigned short UPPER_RANGE = 70;
+    const unsigned ARRAY_SIZE = 10;
+    int numbers1[ARRAY_SIZE] = {};
+
+    srand(time(0));
+
+    cout << "Wylosowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        numbers1[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        cout << numbers1[i] << ", ";
+    }
+    cout << "\n";
+
+    for (int i = 0; i < ARRAY_SIZE - 1; i++)
+    {
+        for (int j = 0; j < ARRAY_SIZE - 1 - i; j++)
+        {   
+            if (numbers1[j] > numbers1[j + 1])
+            {
+                int tmp = numbers1[j];
+                numbers1[j] = numbers1[j + 1];
+                numbers1[j + 1] = tmp;
+            }
+        }
+    }
+
+    cout << "Posortowane liczby:\n";
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cout << numbers1[i] << ", ";
+    }
+    cout << "\n";
+}
+
+
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task6();
+    task8();
 }
