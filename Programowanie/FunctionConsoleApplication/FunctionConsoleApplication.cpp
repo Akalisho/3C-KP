@@ -58,6 +58,13 @@ void task6_GetNumber(int &number)
     cin >> number;
 }
 
+int sumOfNumbers(int fn, int sn)
+{
+    int s;
+    s = fn + sn;
+    return s;
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
@@ -88,7 +95,17 @@ int main()
     //task5(9) - //B£¥D - przez parametr mozna przekazaæ tylko zmienn¹
     //task5(NUMBER) - //B£¥D - przez parametr mo¿na przekazaæ tylko zmienn¹
 
-    int numberFromUser = 5;
-    task6_GetNumber(numberFromUser);
-    cout << "U¿ytkownik poda³ liczbê: " << numberFromUser << "\n";
+    //int numberFromUser = 5;
+    //task6_GetNumber(numberFromUser);
+    //cout << "U¿ytkownik poda³ liczbê: " << numberFromUser << "\n";
+
+    int numberFromUser = 16;
+
+    double result = sqrt(numberFromUser);
+
+    int firstNumber, secondNumber, sum;
+    firstNumber = 9;
+    secondNumber = 1;
+    sum = sumOfNumbers(firstNumber, secondNumber);
+    cout << sum << "\n";
 }
