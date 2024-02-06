@@ -52,13 +52,13 @@ void task5(int &number)
 }
 
 //Napisz program, który pobierze od u¿ytkownika liczbê.
-void task6_GetNumber(int &number)
+void task6_GetNumber(int &number)//void nie wypuszcza wartoœci
 {
     cout << "Podaj liczbê:\n";
     cin >> number;
 }
 
-int sumOfNumbers(int fn, int sn)
+int sumOfNumbers(int fn, int sn)//int wypuszcza wartoœæ
 {
     int s;
     s = fn + sn;
@@ -107,5 +107,5 @@ int main()
     firstNumber = 9;
     secondNumber = 1;
     sum = sumOfNumbers(firstNumber, secondNumber);
-    cout << sum << "\n";
+    cout << sum << "\n"; 
 }
