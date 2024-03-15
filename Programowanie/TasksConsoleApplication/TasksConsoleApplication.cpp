@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -32,6 +33,7 @@ Podaj drug¹ liczbê: 3
 Wynik mno¿enia: 15
 */
 
+
 void task1()
 {
     int operationNumber, firstNumber, secondNumber, result = 0;
@@ -53,7 +55,7 @@ void task1()
             else
                 if (operationNumber == 4)
                     if (secondNumber == 0)
-                        
+                        cout << "Koniec Programu.";
                     else
                         result = firstNumber / secondNumber;
 
@@ -63,8 +65,77 @@ void task1()
         cout << "Wynik operacji matematycznej: " << result;
 }
 
+/*
+ZADANIE
+Konwersja temperatury
+
+Napisz program, który bêdzie konwertowaæ temperaturê pomiêdzy skalami: Celsiusza, Fahrenheita i Kelvina.
+
+Instrukcje:
+
+Poproœ u¿ytkownika o wybór jednostki, z której chce dokonaæ konwersji (C - Celsiusz, F - Fahrenheit, K - Kelvin).
+Poproœ u¿ytkownika o podanie temperatury w wybranej jednostce.
+Przelicz temperaturê na pozosta³e jednostki (z wykorzystaniem odpowiednich wzorów konwersji).
+Wyœwietl przeliczone temperatury.
+Przyk³adowe dzia³anie programu:
+
+Konwerter Temperatur
+---------------------
+Wybierz jednostkê temperatury:
+1. Celsiusz (C)
+2. Fahrenheit (F)
+3. Kelvin (K)
+Wybór: C
+
+Podaj temperaturê w stopniach Celsiusza: 25
+
+Przeliczona temperatura:
+Fahrenheit: 77.0 °F
+Kelvin: 298.15 K
+*/
+
+void showMenuTemperature()
+{
+    cout << "Wybierz operacjê (1 - 3): \n";
+    cout << "-------------------------\n";
+    cout << "1. Celcjusz (C)\n";
+    cout << "2. Fahrenheit (F)\n";
+    cout << "3. Kelvin (K)\n";
+    cout << "0. Koniec Programu\n";
+}
+
+void task2()
+{
+    while (true)
+    {
+        showMenuTemperature;
+
+        int conversionChoice;
+        cout << "Wybór: \n";
+        cin >> conversionChoice;
+
+        if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
+            cout << "Koniec programu.";
+            break;
+
+        double Celcius, Fahrenheit, Calvin;
+        if (conversionChoice == 1)
+            cout << "Podaj temperaturê w stopniach Celcjusza:";
+            cin >> Celcius;
+       if (conversionChoice == 2)
+                cout << "Podaj temperaturê w stopniach Celcjusza:";
+            cin >> Fahrenheit;
+       if (conversionChoice == 3)
+                cout << "Podaj temperaturê w stopniach Celcjusza:";
+            cin >> Calvin;
+            
+    }
+
+
+}
+
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task1();
+    task2();
 }
