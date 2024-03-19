@@ -4,6 +4,7 @@
 
 using namespace std;
 
+#pragma region Zadanie 1
 /*
 Zadanie: Tworzenie prostego kalkulatora
 
@@ -64,7 +65,8 @@ void task1()
     else
         cout << "Wynik operacji matematycznej: " << result;
 }
-
+#pragma endregion
+#pragma region Zadanie 2
 /*
 ZADANIE
 Konwersja temperatury
@@ -108,34 +110,86 @@ void task2()
 {
     while (true)
     {
-        showMenuTemperature;
-
+        showMenuTemperature();
+ 
         int conversionChoice;
         cout << "Wybór: \n";
         cin >> conversionChoice;
 
-        if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
-            cout << "Koniec programu.";
-            break;
-
         double Celcius, Fahrenheit, Calvin;
-        if (conversionChoice == 1)
-            cout << "Podaj temperaturê w stopniach Celcjusza:";
-            cin >> Celcius;
-       if (conversionChoice == 2)
+        if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
+            break;
+        else
+            if (conversionChoice == 1)
                 cout << "Podaj temperaturê w stopniach Celcjusza:";
-            cin >> Fahrenheit;
-       if (conversionChoice == 3)
-                cout << "Podaj temperaturê w stopniach Celcjusza:";
-            cin >> Calvin;
-            
+                cin >> Celcius;
+                cout << "\n";
+                cout << "Przeliczona temperatura: \n";
+                cout << "Fahrenheit: " << (Celcius * 9 / 5) + 32 << " °F\n";
+                cout << "Kelvin: " << Celcius + 273.15 << " °K\n";
+                break;
+            if (conversionChoice == 2)
+                cout << "Podaj temperaturê w stopniach Fahrenheita:";
+                cin >> Fahrenheit;
+                cout << "\n";
+                cout << "Przeliczona temperatura: \n";
+                cout << "Celcjusz: " << (Fahrenheit - 32) / 1.8 << " °F\n";
+                cout << "Kelvin: " << (Fahrenheit - 459.67) * 5 / 9 << " °K\n";
+            break;
+            if (conversionChoice == 3) 
+                cout << "Podaj temperaturê w stopniach Kalwina:";
+                cin >> Calvin;
+                cout << "\n";
+                cout << "Przeliczona temperatura: \n";
+                cout << "Celcjusz: " << Calvin - 273.15 << " °F\n";
+                cout << "Fahrenheit: " << (Calvin * 1.8) - 459.67 << " °K\n";
+                break;
     }
+}
+#pragma endregion
+#pragma region Zadanie 3
+/*
+ZADANIE
+Symulator rzutu kostk¹
 
+Napisz program, który bêdzie symulowa³ rzut kostk¹. Program powinien umo¿liwiaæ u¿ytkownikowi wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna) oraz iloœæ rzutów. Po wykonaniu rzutów, program powinien wyœwietliæ wyniki oraz sumê otrzymanych wartoœci.
+
+Instrukcje:
+
+Poproœ u¿ytkownika o wybór rodzaju kostki (np. 6-œcienna, 10-œcienna, 20-œcienna).
+Poproœ u¿ytkownika o podanie iloœci rzutów.
+Wykonaj podan¹ liczbê rzutów wybranej kostk¹, zapisuj¹c wyniki.
+Wyœwietl otrzymane wyniki oraz sumê otrzymanych wartoœci.
+Przyk³adowe dzia³anie programu:
+
+Symulator rzutu kostk¹
+-----------------------
+
+Wybierz rodzaj kostki (6/10/20): 10
+Ile rzutów chcesz wykonaæ?: 5
+
+Wyniki rzutów kostk¹ 10-œcienn¹:
+1. Rzut 1: 7
+2. Rzut 2: 3
+3. Rzut 3: 10
+4. Rzut 4: 5
+5. Rzut 5: 8
+
+Suma wyników: 33
+
+*/
+void showMenuDiceThrow()
+{
 
 }
 
+void task3()
+{
+    showMenuDiceThrow()
+}
+#pragma endregion
 int main()
 {
     setlocale(LC_CTYPE, "polish");
-    task2();
+    task3();
 }
