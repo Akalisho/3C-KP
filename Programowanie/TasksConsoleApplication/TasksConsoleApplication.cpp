@@ -37,33 +37,33 @@ Wynik mno¿enia: 15
 
 void task1()
 {
-    int operationNumber, firstNumber, secondNumber, result = 0;
-    cout << "Wybierz operacjê (1 - 4): \n1. Dodawanie\n2. Odejmowanie\n3. Mno¿enie\n4. Dzielenie\n";
-    cin >> operationNumber;
-    cout << "Podaj pierwsz¹ liczbê: \n";
-    cin >> firstNumber;
-    cout << "Podaj drug¹ liczbê: \n";
-    cin >> secondNumber;
-    
-    if (operationNumber == 1)
-        result = firstNumber + secondNumber;
-    else
-        if (operationNumber == 2)
-            result = firstNumber - secondNumber;
-        else
-            if (operationNumber == 3)
-                result = firstNumber * secondNumber;
-            else
-                if (operationNumber == 4)
-                    if (secondNumber == 0)
-                        cout << "Koniec Programu.";
-                    else
-                        result = firstNumber / secondNumber;
+	int operationNumber, firstNumber, secondNumber, result = 0;
+	cout << "Wybierz operacjê (1 - 4): \n1. Dodawanie\n2. Odejmowanie\n3. Mno¿enie\n4. Dzielenie\n";
+	cin >> operationNumber;
+	cout << "Podaj pierwsz¹ liczbê: \n";
+	cin >> firstNumber;
+	cout << "Podaj drug¹ liczbê: \n";
+	cin >> secondNumber;
 
-    if (operationNumber > 4 || operationNumber < 1)
-        cout << "Dzia³anie niepoprawne.";
-    else
-        cout << "Wynik operacji matematycznej: " << result;
+	if (operationNumber == 1)
+		result = firstNumber + secondNumber;
+	else
+		if (operationNumber == 2)
+			result = firstNumber - secondNumber;
+		else
+			if (operationNumber == 3)
+				result = firstNumber * secondNumber;
+			else
+				if (operationNumber == 4)
+					if (secondNumber == 0)
+						cout << "Koniec Programu.";
+					else
+						result = firstNumber / secondNumber;
+
+	if (operationNumber > 4 || operationNumber < 1)
+		cout << "Dzia³anie niepoprawne.";
+	else
+		cout << "Wynik operacji matematycznej: " << result;
 }
 #pragma endregion
 #pragma region Zadanie 2
@@ -98,53 +98,53 @@ Kelvin: 298.15 K
 
 void showMenuTemperature()
 {
-    cout << "Wybierz operacjê (1 - 3): \n";
-    cout << "-------------------------\n";
-    cout << "1. Celcjusz (C)\n";
-    cout << "2. Fahrenheit (F)\n";
-    cout << "3. Kelvin (K)\n";
-    cout << "0. Koniec Programu\n";
+	cout << "Wybierz operacjê (1 - 3): \n";
+	cout << "-------------------------\n";
+	cout << "1. Celcjusz (C)\n";
+	cout << "2. Fahrenheit (F)\n";
+	cout << "3. Kelvin (K)\n";
+	cout << "0. Koniec Programu\n";
 }
 
 void task2()
 {
-    while (true)
-    {
-        showMenuTemperature();
- 
-        int conversionChoice;
-        cout << "Wybór: \n";
-        cin >> conversionChoice;
+	while (true)
+	{
+		showMenuTemperature();
 
-        double Celcius, Fahrenheit, Calvin;
-        if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
-            break;
-        else
-            if (conversionChoice == 1)
-                cout << "Podaj temperaturê w stopniach Celcjusza:";
-                cin >> Celcius;
-                cout << "\n";
-                cout << "Przeliczona temperatura: \n";
-                cout << "Fahrenheit: " << (Celcius * 9 / 5) + 32 << " °F\n";
-                cout << "Kelvin: " << Celcius + 273.15 << " °K\n";
-                break;
-            if (conversionChoice == 2)
-                cout << "Podaj temperaturê w stopniach Fahrenheita:";
-                cin >> Fahrenheit;
-                cout << "\n";
-                cout << "Przeliczona temperatura: \n";
-                cout << "Celcjusz: " << (Fahrenheit - 32) / 1.8 << " °F\n";
-                cout << "Kelvin: " << (Fahrenheit - 459.67) * 5 / 9 << " °K\n";
-            break;
-            if (conversionChoice == 3) 
-                cout << "Podaj temperaturê w stopniach Kalwina:";
-                cin >> Calvin;
-                cout << "\n";
-                cout << "Przeliczona temperatura: \n";
-                cout << "Celcjusz: " << Calvin - 273.15 << " °F\n";
-                cout << "Fahrenheit: " << (Calvin * 1.8) - 459.67 << " °K\n";
-                break;
-    }
+		int conversionChoice;
+		cout << "Wybór: \n";
+		cin >> conversionChoice;
+
+		double Celcius, Fahrenheit, Calvin;
+		if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
+			break;
+		else
+			if (conversionChoice == 1)
+				cout << "Podaj temperaturê w stopniach Celcjusza:";
+		cin >> Celcius;
+		cout << "\n";
+		cout << "Przeliczona temperatura: \n";
+		cout << "Fahrenheit: " << (Celcius * 9 / 5) + 32 << " °F\n";
+		cout << "Kelvin: " << Celcius + 273.15 << " °K\n";
+		break;
+		if (conversionChoice == 2)
+			cout << "Podaj temperaturê w stopniach Fahrenheita:";
+		cin >> Fahrenheit;
+		cout << "\n";
+		cout << "Przeliczona temperatura: \n";
+		cout << "Celcjusz: " << (Fahrenheit - 32) / 1.8 << " °F\n";
+		cout << "Kelvin: " << (Fahrenheit - 459.67) * 5 / 9 << " °K\n";
+		break;
+		if (conversionChoice == 3)
+			cout << "Podaj temperaturê w stopniach Kalwina:";
+		cin >> Calvin;
+		cout << "\n";
+		cout << "Przeliczona temperatura: \n";
+		cout << "Celcjusz: " << Calvin - 273.15 << " °F\n";
+		cout << "Fahrenheit: " << (Calvin * 1.8) - 459.67 << " °K\n";
+		break;
+	}
 }
 #pragma endregion
 #pragma region Zadanie 3
@@ -180,16 +180,139 @@ Suma wyników: 33
 */
 void showMenuDiceThrow()
 {
+	cout << "Symulator rzutu kostk¹\n";
+	cout << "-----------------------\n";
+	cout << "Wybierz rodzaj kostki (6, 10, 20): \n";
+}
 
+void drawingNumbers(int diceChoice, int throws)
+{
+	int numbers;
+	srand(time(0));
+	cout << "Wylosowane liczby: ";
+	for (int i = 0; i < throws; i++)
+	{
+		numbers = rand() % (diceChoice - 1 + 1) + 1;
+		cout << numbers << ", ";
+	}
+	cout << "\n";
 }
 
 void task3()
 {
-    showMenuDiceThrow()
+	while (true)
+	{
+		showMenuDiceThrow();
+
+		int diceChoice, throws;
+		cin >> diceChoice;
+		if (diceChoice == 6 || diceChoice == 10 || diceChoice == 20)
+			true;
+		else
+			break;
+		cout << "Ile rzutów chcesz wykonaæ?: \n";
+		cin >> throws;
+
+		drawingNumbers(diceChoice, throws);
+	}
 }
+
 #pragma endregion
+#pragma region Zadanie 4
+/*
+ZADANIE
+Konwerter jednostek
+
+Napisz program konwertuj¹cy jednostki miar. Program powinien umo¿liwiaæ konwersjê miêdzy ró¿nymi jednostkami (np. metry na centymetry, kilogramy na funty) oraz obs³ugiwaæ ró¿ne typy jednostek.
+
+Instrukcje:
+
+Zdefiniuj zestaw jednostek, które chcesz obs³ugiwaæ (np. d³ugoœæ: metry, centymetry, cale; masa: kilogramy, funty).
+Poproœ u¿ytkownika o wybór jednostki wejœciowej i jednostki wyjœciowej oraz podanie wartoœci do konwersji.
+Przekonwertuj wartoœæ z jednostki wejœciowej na jednostkê wyjœciow¹ na podstawie ustalonego wspó³czynnika konwersji.
+Wyœwietl wynik konwersji.
+Przyk³adowe dzia³anie programu:
+
+Konwerter jednostek
+-------------------
+
+Wybierz jednostkê wejœciow¹:
+1. Metry
+2. Centymetry
+3. Cale
+Wybór: 1
+
+Wybierz jednostkê wyjœciow¹:
+1. Metry
+2. Centymetry
+3. Cale
+Wybór: 2
+
+Podaj wartoœæ do konwersji: 5
+
+Wynik konwersji: 500 centymetrów
+
+*/
+
+void showMenuConverter()
+{
+	cout << "Konwerter jednostek\n";
+	cout << "-------------------\n";
+}
+
+void choiceInOutMenu()
+{
+	cout << "Wybierz jednostkê wejœciow¹: \n";
+	cout << "1. Metry\n";
+	cout << "2. Centymetry\n";
+	cout << "3. Cale\n";
+}
+
+void task4()
+{
+	while (true)
+	{
+		int choiceIn, centimeters, meters, cals;
+
+		showMenuConverter();
+
+		choiceInOutMenu();
+
+		cout << "Wybór: ";
+		cin >> choiceIn;
+		cout << "\n";
+
+		if (choiceIn > 3 || choiceIn < 0)
+			break;
+
+		if (choiceIn == 1)
+				cout << "Podaj wartoœæ w metrach: ";
+			cin >> meters;
+			centimeters = meters * 100;
+			cals = meters * 39.370;
+
+		if (choiceIn == 2)
+			cout << "Podaj wartoœæ w centymetrach: ";
+			cin >> centimeters;
+			meters = centimeters / 100;
+			cals = meters * 39.370;
+
+		if (choiceIn == 3)
+			cout << "Podaj wartoœæ w calach: ";
+			cin >> cals;
+			meters = cals * 0.0254;
+			centimeters = meters * 100;
+
+		cout << "Metry: " << meters << "\n";
+		cout << "Centymetry: " << centimeters << "\n";
+		cout << "Cale: " << cals << "\n";
+	}
+}
+
+#pragma endregion
+
 int main()
 {
-    setlocale(LC_CTYPE, "polish");
-    task3();
+	setlocale(LC_CTYPE, "polish");
+	task4();
 }
