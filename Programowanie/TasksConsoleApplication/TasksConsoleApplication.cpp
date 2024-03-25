@@ -258,50 +258,77 @@ void showMenuConverter()
 {
 	cout << "Konwerter jednostek\n";
 	cout << "-------------------\n";
-}
-
-void choiceInOutMenu()
-{
 	cout << "Wybierz jednostkê wejœciow¹: \n";
 	cout << "1. Metry\n";
 	cout << "2. Centymetry\n";
 	cout << "3. Cale\n";
 }
 
+int convertStringToInt(std::string value)
+{
+	int result = 0;
+
+	for (int i = 0; i < value.length(); i++)
+	{
+		if (value[i] >= '0' && value[i] <= '9')
+			result = result * 10 + (value[i] - '0');
+		else
+			return -1;
+	}
+
+	return result;
+}
+
+int getTemperature(std::string message)
+{
+	std::string strChoise;
+
+	std::cout << message;
+
+	std::getline(std::cin, strChoise);
+
+	return convertStringToInt(strChoise);
+}
+
+void calculateConversion(int choiceIn, float &centimeters, float &meters, float &cals)
+{
+	switch (choiceIn)
+	{
+	case 1:
+		centimeters = meters * 100;
+		cals = meters * 39.370;
+	case 2:
+		meters = centimeters / 100;
+		cals = meters * 39.370;
+	case 3:
+		meters = cals * 0.0254;
+		centimeters = meters * 100;
+	default:
+		break;
+	}
+}
+
 void task4()
 {
 	while (true)
 	{
-		int choiceIn, centimeters, meters, cals;
+		float centimeters, meters, cals;
 
 		showMenuConverter();
 
-		choiceInOutMenu();
-
-		cout << "Wybór: ";
-		cin >> choiceIn;
-		cout << "\n";
+		int choiceIn = getTemperature("Wybór: ");
 
 		if (choiceIn > 3 || choiceIn < 0)
 			break;
 
 		if (choiceIn == 1)
-				cout << "Podaj wartoœæ w metrach: ";
-			cin >> meters;
-			centimeters = meters * 100;
-			cals = meters * 39.370;
-
+			meters = getTemperature("Podaj wartoœæ w metrach: ");
 		if (choiceIn == 2)
-			cout << "Podaj wartoœæ w centymetrach: ";
-			cin >> centimeters;
-			meters = centimeters / 100;
-			cals = meters * 39.370;
-
+			centimeters = getTemperature("Podaj wartoœæ w centymetrach: ");
 		if (choiceIn == 3)
-			cout << "Podaj wartoœæ w calach: ";
-			cin >> cals;
-			meters = cals * 0.0254;
-			centimeters = meters * 100;
+			cals = getTemperature("Podaj wartoœæ w calach: ");
+		
+		calculateConversion(choiceIn, centimeters, meters, cals);
 
 		cout << "Metry: " << meters << "\n";
 		cout << "Centymetry: " << centimeters << "\n";
