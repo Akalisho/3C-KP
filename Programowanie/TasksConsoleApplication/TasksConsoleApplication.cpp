@@ -106,44 +106,74 @@ void showMenuTemperature()
 	cout << "0. Koniec Programu\n";
 }
 
+int convertStringToInt(std::string value)
+{
+	int result = 0;
+
+	for (int i = 0; i < value.length(); i++)
+	{
+		if (value[i] >= '0' && value[i] <= '9')
+			result = result * 10 + (value[i] - '0');
+		else
+			return -1;
+	}
+
+	return result;
+}
+
+int getTemperature(std::string message)
+{
+	std::string strChoise;
+
+	std::cout << message;
+
+	std::getline(std::cin, strChoise);
+
+	return convertStringToInt(strChoise);
+}
+
+void calculateTemperature(int conversionChoice, float &Celcius, float &Fahrenheit, float &Calvin)
+{
+	cout << "\n";
+	cout << "Przeliczona temperatura: \n";
+	switch (conversionChoice)
+	{
+	case 1:
+		cout << "Fahrenheit: " << (Celcius * 9 / 5) + 32 << " °F\n";
+		cout << "Kelvin: " << Celcius + 273.15 << " °K\n";
+	case 2:
+		cout << "Celcjusz: " << (Fahrenheit - 32) / 1.8 << " °F\n";
+		cout << "Kelvin: " << (Fahrenheit - 459.67) * 5 / 9 << " °K\n";
+	case 3:
+		cout << "Celcjusz: " << Calvin - 273.15 << " °F\n";
+		cout << "Fahrenheit: " << (Calvin * 1.8) - 459.67 << " °K\n";
+	}
+}
+
 void task2()
 {
 	while (true)
 	{
 		showMenuTemperature();
 
-		int conversionChoice;
-		cout << "Wybór: \n";
-		cin >> conversionChoice;
+		int conversionChoice = getTemperature("Wybór: ");
 
-		double Celcius, Fahrenheit, Calvin;
+		float Celcius, Fahrenheit, Calvin;
+
 		if (conversionChoice == 0 || conversionChoice > 3 || conversionChoice < 0)
 			break;
-		else
-			if (conversionChoice == 1)
-				cout << "Podaj temperaturê w stopniach Celcjusza:";
-		cin >> Celcius;
-		cout << "\n";
-		cout << "Przeliczona temperatura: \n";
-		cout << "Fahrenheit: " << (Celcius * 9 / 5) + 32 << " °F\n";
-		cout << "Kelvin: " << Celcius + 273.15 << " °K\n";
-		break;
-		if (conversionChoice == 2)
-			cout << "Podaj temperaturê w stopniach Fahrenheita:";
-		cin >> Fahrenheit;
-		cout << "\n";
-		cout << "Przeliczona temperatura: \n";
-		cout << "Celcjusz: " << (Fahrenheit - 32) / 1.8 << " °F\n";
-		cout << "Kelvin: " << (Fahrenheit - 459.67) * 5 / 9 << " °K\n";
-		break;
-		if (conversionChoice == 3)
-			cout << "Podaj temperaturê w stopniach Kalwina:";
-		cin >> Calvin;
-		cout << "\n";
-		cout << "Przeliczona temperatura: \n";
-		cout << "Celcjusz: " << Calvin - 273.15 << " °F\n";
-		cout << "Fahrenheit: " << (Calvin * 1.8) - 459.67 << " °K\n";
-		break;
+
+		switch (conversionChoice)
+		{
+		case 1:
+			Celcius = getTemperature("Podaj temperaturê w stopniach Celcjusza: ");
+		case 2:
+			Fahrenheit = getTemperature("Podaj temperaturê w stopniach Fahrenheita: ");
+		case 3:
+			Calvin = getTemperature("Podaj temperaturê w stopniach Kalwina: ");
+		}
+		
+		calculateConversion(conversionChoice, Celcius, Fahrenheit, Calvin);
 	}
 }
 #pragma endregion
@@ -279,18 +309,44 @@ int convertStringToInt(std::string value)
 	return result;
 }
 
-int getTemperature(std::string message)
+int getNumber(std::string message)
 {
-	std::string strChoise;
+	std::string valueInt;
 
 	std::cout << message;
 
-	std::getline(std::cin, strChoise);
+	cin >> valueInt;
 
-	return convertStringToInt(strChoise);
+	return convertStringToInt(valueInt);
 }
 
-void calculateConversion(int choiceIn, float &centimeters, float &meters, float &cals)
+double convertStringToDouble(std::string value)
+{
+	double result = 0;
+
+	for (int i = 0; i < value.length(); i++)
+	{
+		if (value[i] >= '0' && value[i] <= '9')
+			result = result * 10 + (value[i] - '0');
+		else
+			return -1;
+	}
+
+	return result;
+}
+
+double getDoubleNumber(std::string message)
+{
+	std::string value;
+
+	std::cout << message;
+
+	cin >> value;
+
+	return convertStringToDouble(value);
+}
+
+void calculateConversion(int choiceIn, double &centimeters, double &meters, double &cals)
 {
 	switch (choiceIn)
 	{
@@ -303,8 +359,6 @@ void calculateConversion(int choiceIn, float &centimeters, float &meters, float 
 	case 3:
 		meters = cals * 0.0254;
 		centimeters = meters * 100;
-	default:
-		break;
 	}
 }
 
@@ -312,21 +366,21 @@ void task4()
 {
 	while (true)
 	{
-		float centimeters, meters, cals;
+		double centimeters, meters, cals;
 
 		showMenuConverter();
 
-		int choiceIn = getTemperature("Wybór: ");
+		int choiceIn = getNumber("Wybór: ");
 
 		if (choiceIn > 3 || choiceIn < 0)
 			break;
 
 		if (choiceIn == 1)
-			meters = getTemperature("Podaj wartoœæ w metrach: ");
+			meters = getDoubleNumber("Podaj wartoœæ w metrach: ");
 		if (choiceIn == 2)
-			centimeters = getTemperature("Podaj wartoœæ w centymetrach: ");
+			centimeters = getDoubleNumber("Podaj wartoœæ w centymetrach: ");
 		if (choiceIn == 3)
-			cals = getTemperature("Podaj wartoœæ w calach: ");
+			cals = getDoubleNumber("Podaj wartoœæ w calach: ");
 		
 		calculateConversion(choiceIn, centimeters, meters, cals);
 
@@ -341,5 +395,5 @@ void task4()
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task4();
+	task3();
 }
