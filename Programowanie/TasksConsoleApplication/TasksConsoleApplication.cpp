@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include <string>
+#include <windows.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -132,7 +134,7 @@ int getTemperature(std::string message)
 	return convertStringToInt(strChoise);
 }
 
-void calculateTemperature(int conversionChoice, float &Celcius, float &Fahrenheit, float &Calvin)
+void calculateTemperature(int conversionChoice, float& Celcius, float& Fahrenheit, float& Calvin)
 {
 	cout << "\n";
 	cout << "Przeliczona temperatura: \n";
@@ -172,7 +174,7 @@ void task2()
 		case 3:
 			Calvin = getTemperature("Podaj temperaturê w stopniach Kalwina: ");
 		}
-		
+
 		calculateConversion(conversionChoice, Celcius, Fahrenheit, Calvin);
 	}
 }
@@ -346,7 +348,7 @@ double getDoubleNumber(std::string message)
 	return convertStringToDouble(value);
 }
 
-void calculateConversion(int choiceIn, double &centimeters, double &meters, double &cals)
+void calculateConversion(int choiceIn, double& centimeters, double& meters, double& cals)
 {
 	switch (choiceIn)
 	{
@@ -381,7 +383,7 @@ void task4()
 			centimeters = getDoubleNumber("Podaj wartoœæ w centymetrach: ");
 		if (choiceIn == 3)
 			cals = getDoubleNumber("Podaj wartoœæ w calach: ");
-		
+
 		calculateConversion(choiceIn, centimeters, meters, cals);
 
 		cout << "Metry: " << meters << "\n";
@@ -391,9 +393,56 @@ void task4()
 }
 
 #pragma endregion
+#pragma region sky - Niebo
 
+//W losowym miejscu pojawienie siê gwiazdki i znikniêcie po pewnym czasie.
+void setCursor(int x, int y)
+{
+	COORD c;
+	c.X = x;
+	c.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+}
+
+void showConsoleCursor(bool showFlag)
+{
+	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	CONSOLE_CURSOR_INFO     cursorInfo;
+
+	GetConsoleCursorInfo(out, &cursorInfo);
+	cursorInfo.bVisible = showFlag; // set the cursor visibility
+	SetConsoleCursorInfo(out, &cursorInfo);
+}
+
+void getConsolResolution(int& consoleWidth, int& consoleHeight)
+{
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+	consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left;
+	consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top;
+}
+
+void task5()
+{
+	srand(time(0));
+	int consoleHeight, consoleWidth;
+	unsigned short x = 0;
+	unsigned short y = rand() % consoleHeight;
+
+	getConsolResolution(consoleWidth, consoleHeight); 
+
+	showConsoleCursor(false);
+	system("cls");
+
+	setCursor(x, y);
+	std::cout << "X";
+}
+
+#pragma endregion
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
-	task3();
+	task5();
 }
