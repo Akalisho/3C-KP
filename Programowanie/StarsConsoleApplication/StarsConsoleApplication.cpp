@@ -5,6 +5,12 @@
 using namespace std;
 
 //W losowym miejscu pojawienie siê gwiazdki i znikniêcie po pewnym czasie.
+struct point 
+{
+	unsigned short x;
+	unsigned short y;
+};
+
 void setCursor(int x, int y)
 {
 	COORD c;
@@ -43,15 +49,16 @@ int main()
 
 	while (true)
 	{
-		unsigned short x = rand() % consoleWidth;
-		unsigned short y = rand() % consoleHeight;
+		point coordinate;
+		coordinate.x = rand() % consoleWidth;
+		coordinate.y = rand() % consoleHeight;
 
-		setCursor(x, y);
+		setCursor(coordinate.x, coordinate.y);
 		std::cout << "*";
 
-		Sleep(250);
+		Sleep(500);
 
-		setCursor(x, y);
+		setCursor(coordinate.x, coordinate.y);
 		std::cout << " ";
 	}
 }

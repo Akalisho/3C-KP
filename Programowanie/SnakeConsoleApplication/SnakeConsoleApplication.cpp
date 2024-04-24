@@ -10,6 +10,11 @@ enum keyCode {
 	ESC
 };
 
+struct point {
+	unsigned short x;
+	unsigned short y;
+};
+
 void setCursor(int x, int y)
 {
 	COORD c;
@@ -105,8 +110,10 @@ int main()
 
 	return 0;*/
 
-	unsigned short x = 0;
-	unsigned short y = 0;
+	point coordinate;
+	coordinate.x = 0;
+	coordinate.y = 0;
+
 	keyCode currentKeyCode = keyCode::RIGHT;
 	int consoleHeight, consoleWidth;
 
@@ -120,14 +127,14 @@ int main()
 
 	while (true)
 	{
-		setCursor(x, y);
+		setCursor(coordinate.x, coordinate.y);
 		std::cout << "X";
 
 		currentKeyCode = getKeyCode(currentKeyCode);
 
 		Sleep(300);
 
-		setCursor(x, y);
+		setCursor(coordinate.x, coordinate.y);
 		std::cout << " ";
 
 		switch (currentKeyCode)
