@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakeConsoleApplication", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StarsConsoleApplication", "StarsConsoleApplication\StarsConsoleApplication.vcxproj", "{AC570706-1F7E-411C-AB4B-A2E6A925B37E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrawRectangleConsoleApplication", "DrawRectangleConsoleApplication\DrawRectangleConsoleApplication.vcxproj", "{E142B67E-662C-42A4-B29C-7570CDE1CACA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{AC570706-1F7E-411C-AB4B-A2E6A925B37E}.Release|x64.Build.0 = Release|x64
 		{AC570706-1F7E-411C-AB4B-A2E6A925B37E}.Release|x86.ActiveCfg = Release|Win32
 		{AC570706-1F7E-411C-AB4B-A2E6A925B37E}.Release|x86.Build.0 = Release|Win32
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Debug|x64.ActiveCfg = Debug|x64
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Debug|x64.Build.0 = Debug|x64
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Debug|x86.ActiveCfg = Debug|Win32
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Debug|x86.Build.0 = Debug|Win32
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Release|x64.ActiveCfg = Release|x64
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Release|x64.Build.0 = Release|x64
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Release|x86.ActiveCfg = Release|Win32
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +179,7 @@ Global
 		{3D46F8DC-2FE6-4C46-9DED-49CA174EF20B} = {2C99F321-856F-407A-975E-EA6BBF57F7D8}
 		{ED604F64-E8F7-49C7-B411-35459CF90C3D} = {2C99F321-856F-407A-975E-EA6BBF57F7D8}
 		{AC570706-1F7E-411C-AB4B-A2E6A925B37E} = {2C99F321-856F-407A-975E-EA6BBF57F7D8}
+		{E142B67E-662C-42A4-B29C-7570CDE1CACA} = {2C99F321-856F-407A-975E-EA6BBF57F7D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F097B48F-B591-4473-B32E-9C089190C89B}

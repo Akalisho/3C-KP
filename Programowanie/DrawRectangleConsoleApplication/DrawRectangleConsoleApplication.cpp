@@ -1,13 +1,16 @@
-?#include <iostream>
+#include <iostream>
 #include <windows.h>
 #include <conio.h>
+
+using namespace std;
 
 enum keyCode {
 	UP,
 	DOWN,
 	LEFT,
 	RIGHT,
-	ESC
+	ESC,
+	ENTER
 };
 
 struct point {
@@ -57,6 +60,12 @@ void getConsolResolution(int& consoleWidth, int& consoleHeight)
 	consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top;
 }
 
+void printCharacter(point& p, char sign)
+{
+	setCursor(p);
+	std::cout << sign;
+}
+
 keyCode codeChar(unsigned char charToCode)
 {
 	if (charToCode == 'w' || charToCode == 72)
@@ -69,6 +78,8 @@ keyCode codeChar(unsigned char charToCode)
 		return keyCode::RIGHT;
 	if (charToCode == 27)
 		return keyCode::ESC;
+	if (charToCode == 13)
+		return keyCode::ENTER;
 }
 
 keyCode getKeyCode(keyCode prevKeyCode)
@@ -96,74 +107,21 @@ keyCode getKeyCode(keyCode prevKeyCode)
 	}
 	return currentKeyCode;
 }
-
-void setRandomCoordinate(point& p, int maxX, int maxY)
-{
-	p.x = rand() % maxX;
-	p.y = rand() % maxY;
-}
-
-void fillItemsToCollect(point itemsToCollect[], unsigned int count, int maxX, int maxY)
-{
-	srand(time(NULL));
-	for (int i = 0; i < count; i++)
-	{
-		setRandomCoordinate(itemsToCollect[i], maxX, maxY);
-	}
-}
-
-void printCharacter(point& p, char sign)
-{
-	setCursor(p);
-	std::cout << sign;
-}
-
-void printItemsToCollect(point itemsToCollect[], unsigned int count)
-{
-	for (int i = 0; i < count; i++)
-	{
-		printCharacter(itemsToCollect[i], '*');
-	}
-}
-
-int getHitItemCollect(point coordinate, point itemsToCollect[], unsigned int count)
-{
-	for (int i = 0; i < count; i++)
-	{
-		if (itemsToCollect[i].x == coordinate.x
-			&& itemsToCollect[i].y == coordinate.y)
-			return i;
-	}
-	return -1;
-}
-
-void changeCoordinate(point& coordinate, keyCode currentKeyCode, int consoleWidth, int consoleHeight)
+void changeCoordinate(point& coordinate, keyCode currentKeyCode)
 {
 	switch (currentKeyCode)
 	{
 	case keyCode::UP:
-		if (coordinate.y > 0)
-			coordinate.y--;
-		else
-			coordinate.y = consoleHeight;
+		coordinate.y--;
 		break;
 	case keyCode::DOWN:
-		if (coordinate.y < consoleHeight)
-			coordinate.y++;
-		else
-			coordinate.y = 0;
+		coordinate.y++;
 		break;
 	case keyCode::LEFT:
-		if (coordinate.x > 0)
-			coordinate.x--;
-		else
-			coordinate.x = consoleWidth;
+		coordinate.x--;
 		break;
 	case keyCode::RIGHT:
-		if (coordinate.x < consoleWidth)
-			coordinate.x++;
-		else
-			coordinate.x = 0;
+		coordinate.x++;
 		break;
 	default:
 		break;
@@ -201,50 +159,16 @@ void printBoard(boardCoordinates& board)
 
 int main()
 {
-	/*unsigned char sign;
-
-	while (true)
-	{
-		sign = _getch();
-		std::cout << (int)sign << "\n";
-	}
-
-	return 0;*/
-
-	/*std::string password = "";
-	char characterFromUser;
-
-	do
-	{
-		characterFromUser = _getch();
-		std::cout << "*";
-		if (characterFromUser != 13)
-			password += characterFromUser;
-	} while (characterFromUser != 13);
-
-	std::cout << "\n" << password;
-
-	return 0;*/
-
-
-	//typ nazwa;
-	//point coordinate;
-	const unsigned int SNAKE_MAX_LENGTH = 10;
-	point snakeCoordinates[SNAKE_MAX_LENGTH];
+	point snakeCoordinates[1];
 	unsigned int snakeHead = 0;
-	unsigned int snakeTail = 0;
-	//coordinate.x = 0;
-	//coordinate.y = 0;
 
 	keyCode currentKeyCode = keyCode::RIGHT;
 	int consoleHeight, consoleWidth;
 
-	const unsigned int ELEMENT_TO_COLLECT_COUNT = 20;
-	point itemsToCollect[ELEMENT_TO_COLLECT_COUNT];
-
 	boardCoordinates board;
 
 	getConsolResolution(consoleWidth, consoleHeight);
+
 	board.leftTop.x = 10;
 	board.leftTop.y = 2;
 	board.rightBottom.x = consoleWidth - 30;
@@ -255,45 +179,17 @@ int main()
 
 	printBoard(board);
 
-	fillItemsToCollect(itemsToCollect, ELEMENT_TO_COLLECT_COUNT, consoleWidth, consoleHeight);
-	printItemsToCollect(itemsToCollect, ELEMENT_TO_COLLECT_COUNT);
-
-	setRandomCoordinate(snakeCoordinates[snakeHead], consoleWidth, consoleHeight);
 	while (true)
 	{
 		printCharacter(snakeCoordinates[snakeHead], 'X');
 
-		int hit;
-		if ((hit = getHitItemCollect(snakeCoordinates[snakeHead], itemsToCollect, ELEMENT_TO_COLLECT_COUNT)) >= 0)
-		{
-			setRandomCoordinate(itemsToCollect[hit], consoleWidth, consoleHeight);
-
-			printCharacter(itemsToCollect[hit], '*');
-		}
-
 		currentKeyCode = getKeyCode(currentKeyCode);
-
-		if (hit == -1 && snakeTail != snakeHead)
-		{
-			printCharacter(snakeCoordinates[snakeTail], ' ');
-			snakeTail = (snakeTail + 1) % SNAKE_MAX_LENGTH;
-		}
 
 		Sleep(300);
 
-		point tmpHead = snakeCoordinates[snakeHead];
-		snakeHead = (snakeHead + 1) % SNAKE_MAX_LENGTH;
-		snakeCoordinates[snakeHead] = tmpHead;
-
-		changeCoordinate(snakeCoordinates[snakeHead], currentKeyCode, consoleWidth, consoleHeight);
+		changeCoordinate(snakeCoordinates[snakeHead], currentKeyCode);
 
 		if (currentKeyCode == keyCode::ESC)
 			break;
 	}
-
-	//setCursor(5, 7);
-	//std::cout << "Hello World!\n";
-	//setCursor(4, 6);
-	//int x;
-	//std::cin >> x;
 }
