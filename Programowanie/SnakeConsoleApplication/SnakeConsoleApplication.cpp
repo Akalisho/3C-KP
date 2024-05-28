@@ -283,7 +283,7 @@ int main()
 
 		point tmpHead = snakeCoordinates[snakeHead];
 		snakeHead = (snakeHead + 1) % SNAKE_MAX_LENGTH;
-		snakeCoordinates[snakeHead] = tmpHead;
+		snakeCoordinates[snakeHead] = tmpHead; 
 
 		changeCoordinate(snakeCoordinates[snakeHead], currentKeyCode, consoleWidth, consoleHeight);
 
