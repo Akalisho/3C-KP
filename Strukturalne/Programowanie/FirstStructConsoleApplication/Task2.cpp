@@ -11,7 +11,7 @@ void getPointValue(point &p)
 	std::cout << "Podaj x: \n";
 	std::cin >> p.x;
 
-	std::cout << "Podaj y: \n";
+	std::cout << "Podaj y3: \n";
 	std::cin >> p.y;
 }
 
@@ -23,5 +23,5 @@ void task2()
 
 	double distance = sqrt(firstPoint.x * firstPoint.x + firstPoint.y * firstPoint.y);
 
-	std::cout << "Odleg³oœæ to: " << distance;
+	std::cout << "Odleg³oœæ to: " << distance; 
 }
