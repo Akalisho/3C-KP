@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b3f058a8-f3c0-4d9d-99be-11f11984989c}</ProjectGuid>
-    <RootNamespace>FirstStructConsoleApplication</RootNamespace>
+    <ProjectGuid>{263d7a79-07ba-4ff4-8b95-a191f37a70b1}</ProjectGuid>
+    <RootNamespace>GierkaJakasCzyCos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,14 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FirstStructConsoleApplication.cpp" />
-    <ClCompile Include="Task1.cpp" />
-    <ClCompile Include="Task2.cpp" />
-    <ClCompile Include="Task3.cpp" />
-    <ClCompile Include="Task4.cpp" />
+    <ClCompile Include="GierkaJakasCzyCos.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tasks.h" />
+    <ClInclude Include="MainGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
