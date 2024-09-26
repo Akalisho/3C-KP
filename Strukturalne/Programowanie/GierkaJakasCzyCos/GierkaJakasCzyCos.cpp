@@ -20,19 +20,19 @@ void mainGame()
 	const int maxLives = 10;
 	int numbersUsed[maxLives + 1];
 	int currentLives = maxLives;
-	std::cout << randomNumber;
 	do
 	{
 		std::cout << "Podaj liczbe: \n";
 		std::cin >> numberFromUser;
-		numbersUsed[currentLives + 1] = numberFromUser;
+		numbersUsed[] = numberFromUser;
 		system("cls");
+		for (int i = 0; i <= maxLives + 1; i++)
+		{
+			std::cout << numbersUsed[i] << ", ";
+		}
+
 		if (numberFromUser > randomNumber)
 		{
-			for (int i = 0; i <= maxLives + 1; i++)
-			{
-				std::cout << numbersUsed[i];
-			}
 			currentLives--;
 			std::cout << "Twoje ¯ycia: " << currentLives << "\n";
 			std::cout << "Mniej.\n";
@@ -41,10 +41,6 @@ void mainGame()
 
 		if (numberFromUser < randomNumber)
 		{
-			for (int i = 0; i <= maxLives + 1; i++) 
-			{
-				std::cout << numbersUsed[i]; 
-			}
 			currentLives--;
 			std::cout << "Twoje ¯ycia: " << currentLives << "\n";
 			std::cout << "Wiecej.\n";
