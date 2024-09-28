@@ -7,7 +7,7 @@ int main()
 {
 	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 	setlocale(LC_CTYPE, "polish");
-    mainGame();
+	mainGame();
 }
 
 void mainGame()
@@ -20,12 +20,14 @@ void mainGame()
 	int yourAttempts = 0;
 	const int maxLives = 10;
 	int numbersUsed[maxLives + 1];
+	std::string whatValue[maxLives + 1];
 	int currentLives = maxLives;
 	std::string moreOrLess;
 
-	for (int i = 1; i > maxLives + 1; i++)
-	{ 
+	for (int i = 1; i < maxLives + 1; i++)
+	{
 		numbersUsed[i] = 0;
+		whatValue[i] = " ";
 	}
 
 	do
@@ -51,13 +53,15 @@ void mainGame()
 		}
 
 		system("cls");
+
 		std::cout << "Wpisane liczby: \n";
 
-		for (int i = 1; i > maxLives + 1; i++)
+		for (int i = 1; i < maxLives + 1; i++)
 		{
-			std::cout << numbersUsed[i] << ", ";
+			std::cout << numbersUsed[i] << whatValue[i]<< ", ";
 
 			numbersUsed[currentLives] = numberFromUser;
+			whatValue[currentLives] = moreOrLess;
 		}
 
 		if (numberFromUser > randomNumber)
@@ -76,6 +80,7 @@ void mainGame()
 			continue;
 		}
 	} while (numberFromUser != randomNumber);
+
 	if (currentLives < 1)
 	{
 		std::cout << " ";
