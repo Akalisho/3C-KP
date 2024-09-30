@@ -20,10 +20,20 @@ void depositToAccount(bankAccount& account, double amount)
 		account.balance = account.balance + amount;
 }
 
-void withdrawalToAccount(bankAccount& account, double amount)
+bool withdrawalFromAccount(bankAccount& account, double amount)
 {
 	if (amount > 0 && account.balance >= amount)
+	{
 		account.balance = account.balance - amount;
+		return true;
+	}
+	return false;
+}
+
+void transferBetweenAccounts(bankAccount& sourceAccount, bankAccount& targetAccount, double amount)
+{
+	if (withdrawalFromAccount(sourceAccount, amount))
+		depositToAccount(targetAccount, amount);
 }
 
 void task4()
@@ -45,6 +55,6 @@ void task4()
 	depositToAccount(firstAccount, 100);
 	accountInformation(firstAccount);
 
-	withdrawalToAccount(firstAccount, 200);
+	withdrawalFromAccount(firstAccount, 200);
 	accountInformation(firstAccount);
 }

@@ -10,6 +10,10 @@ int main()
 	mainGame();
 }
 
+/*
+* Zrobiæ poziomy trudnoœci.
+*/
+
 void mainGame()
 {
 	const int LOWER_RANGE = 1;
@@ -34,8 +38,10 @@ void mainGame()
 	{
 		if (currentLives < 1)
 		{
+			std::cout << "------------------------------------------\n";
 			std::cout << "Przegra³eœ. Twoje próby: " << yourAttempts << "\n";
 			std::cout << "Numer do odgadniêcia: " << randomNumber << "\n";
+			std::cout << "------------------------------------------\n";
 			break;
 		}
 
@@ -58,11 +64,13 @@ void mainGame()
 
 		for (int i = 1; i < maxLives + 1; i++)
 		{
-			std::cout << numbersUsed[i] << whatValue[i]<< ", ";
+			std::cout << numbersUsed[i] << whatValue[i] << ", ";
 
 			numbersUsed[currentLives] = numberFromUser;
 			whatValue[currentLives] = moreOrLess;
 		}
+
+		std::cout << "\n------------------------------------------\n";
 
 		if (numberFromUser > randomNumber)
 		{
@@ -79,7 +87,12 @@ void mainGame()
 			std::cout << "Wiecej.\n";
 			continue;
 		}
+
+		std::cout << "------------------------------------------\n";
+
 	} while (numberFromUser != randomNumber);
+
+	system("cls");
 
 	if (currentLives < 1)
 	{
@@ -87,6 +100,9 @@ void mainGame()
 	}
 	else
 	{
+		std::cout << "------------------------------------------\n";
 		std::cout << "Wygra³eœ!!! Twoje ¯ycia: " << currentLives << "\n";
+		std::cout << "Numer do odgadniêcia: " << randomNumber << "\n";
+		std::cout << "------------------------------------------\n";
 	}
 }
