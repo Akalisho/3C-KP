@@ -6,13 +6,15 @@
 
 int main()
 {
-	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+	//::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 	mainGame();
 }
 
 void click(int &clicks, char input)
 {
-	while (true)
+	int quitGame = 0;
+
+	while (quitGame == 0)
 	{
 		input = _getch();
 
@@ -28,7 +30,7 @@ void click(int &clicks, char input)
 		}
 		case 'q':
 		{
-			break;
+			quitGame++;
 		}
 		}
 	}
@@ -43,4 +45,7 @@ void mainGame()
 	std::cout << "Press 'c' to Click, 'q' to quit.\n";
 
 	click(clicks, input);
+
+	system("cls");
+	std::cout << "Koniec gry. \n";
 }

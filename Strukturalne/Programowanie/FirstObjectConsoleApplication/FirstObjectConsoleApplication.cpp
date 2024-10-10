@@ -24,4 +24,9 @@ int main()
 
 	firstAccount.WithdrawalFromAccount(200);
 	firstAccount.AccountInformation();
+
+	firstAccount.TransferBetweenAccounts(secondAccount, 8100);
+
+	firstAccount.AccountInformation();
+	secondAccount.AccountInformation();
 }

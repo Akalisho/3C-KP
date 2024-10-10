@@ -6,12 +6,8 @@ public:
 	double balance;
 	std::string owner;
 	std::string currency;
-
 	void AccountInformation();
-
-	void DepositToAccount();
-
-	bool WithdrawalFromAccount();
-
-	void transferBetweenAccounts();
+	void DepositToAccount(double amount);
+	bool WithdrawalFromAccount(double amount);
+	void TransferBetweenAccounts(BankAccount& targetAccount, double amount);
 };

@@ -24,8 +24,8 @@ bool BankAccount::WithdrawalFromAccount(double amount)
 	return false;
 }
 
-void BankAccount::ransferBetweenAccounts(BankAccount& sourceAccount, BankAccount& targetAccount, double amount)
+void BankAccount::TransferBetweenAccounts(BankAccount& targetAccount, double amount)
 {
-	if (sourceAccount.WithdrawalFromAccount(amount))
+	if (WithdrawalFromAccount(amount))
 		targetAccount.DepositToAccount(amount);
 }
