@@ -26,7 +26,29 @@ void task1()
 	}
 }
 
+void task2()
+{
+	std::ifstream readFromFile;
+	readFromFile.open("c:\\plik2C.txt");
+	if (readFromFile.is_open())
+	{
+		std::string name;
+		int age;
+
+
+		//while (readFromFile.eof() = false)
+		while(readFromFile >> name)
+		{
+			//readFromFile >> name;
+			readFromFile >> age;
+
+			std::cout << "Imie: " << name << "Wiek: " << age << "\n";
+		}
+		readFromFile.close();
+	}
+}
+
 int main()
 {
-	task1();
+	task2();
 }
