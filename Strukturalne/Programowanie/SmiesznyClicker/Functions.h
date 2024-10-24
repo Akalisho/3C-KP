@@ -1,4 +1,4 @@
 #pragma once
 
 void mainGame();
-void click();
+void click(float click, int input);
