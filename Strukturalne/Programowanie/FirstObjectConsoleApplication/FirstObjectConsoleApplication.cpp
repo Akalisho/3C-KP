@@ -5,17 +5,20 @@
 int main()
 {
 	setlocale(LC_CTYPE, "polish");
+
 	BankAccount firstAccount;
-	firstAccount.balance = 7200;
+	//firstAccount.balance = 7200;
+	firstAccount.SetBalance(7200);
 	firstAccount.owner = "Jan Kowalski";
 	firstAccount.currency = "z³";
 
 	firstAccount.AccountInformation();
 
 	BankAccount secondAccount;
-	firstAccount.balance = 3200;
-	firstAccount.owner = "Ewa Nowak";
-	firstAccount.currency = "z³";
+	//firstAccount.balance = 3200;
+	secondAccount.SetBalance(3200);
+	secondAccount.owner = "Ewa Nowak";
+	secondAccount.currency = "z³";
 
 	secondAccount.AccountInformation();
 
