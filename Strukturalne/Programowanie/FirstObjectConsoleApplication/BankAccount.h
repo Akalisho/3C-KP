@@ -7,11 +7,14 @@ private:
 	std::string owner;
 	std::string currency;
 
-	void SetBalance(double b);
-public:
 	bool isSetBalanceExecute = false;
+public:
+	//BankAccount();
+
+	BankAccount(double b, std::string o, std::string c);
 
 	double GetBalance();
+	void SetBalance(double b);
 
 	void AccountInformation();
 

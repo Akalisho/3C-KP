@@ -33,7 +33,7 @@ void prestiging(float& clicks, char input)
 	std::cout << "Press 'r' to prestige.";
 	if (input == 'r' && clicks >= 1000)
 	{
-		double prestigeCalculation = (9 * (1.4 ^ (clicks / 10)) * 1.15);
+		float prestigeCalculation = (9 * (1.4 ^ (clicks / 10)) * 1.15);
 		float prestige = std::floor(prestigeCalculation); 
 	}
 }

@@ -1,6 +1,21 @@
 #include <iostream>
 #include "BankAccount.h"
 
+//BankAccount()
+//{
+//	balance = 7200;
+//	owner = "Jan Kowalski";
+//	currency = "z³";
+//}
+
+BankAccount(double b, std::string o, std::string c);
+{
+	//balance = b;
+	SetBalance(b);
+	owner = o;
+	currency = c;
+}
+
 void BankAccount::SetBalance(double b)
 {
 	if (b >= 0
