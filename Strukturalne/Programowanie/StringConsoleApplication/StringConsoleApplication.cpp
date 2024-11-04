@@ -6,7 +6,7 @@ int main()
     setlocale(LC_CTYPE, "polish");
 
     std::string text;
-
+    /*
     text = "Hello";
     std::cout << "Nasz tekst na pocz¹tku: " << text << "\n";
     std::cout << "D³ugoœæ ³añcucha to: " << text.length() << "\n";
@@ -24,7 +24,7 @@ int main()
 
     text.insert(3, " nie");
     std::cout << "Zmiana tekstu na: " << text << "\n";
-
+    */
     std::string text;
 
     text = "Whats up";
