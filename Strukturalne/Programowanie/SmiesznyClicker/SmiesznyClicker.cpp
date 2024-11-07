@@ -13,7 +13,7 @@ int main()
 
 void mainGame()
 {
-	float clicks = 0;
+	int clicks = 0;
 	char input = 0;
 
 	std::cout << "Welcome to the Clicker Game!!!\n";
@@ -25,7 +25,7 @@ void mainGame()
 	std::cout << "Koniec gry. \n";
 }
 
-void prestiging(float& clicks, char input)
+void prestiging(int& clicks, char input)
 {
 	system("cls");
 	std::cout << "Your Clicks: " << clicks << "\n";
@@ -38,7 +38,7 @@ void prestiging(float& clicks, char input)
 	}
 }
 
-void click(float& clicks, char input)
+void click(int& clicks, char input)
 {
 	int quitGame = 0;
 	float prestige = 0;

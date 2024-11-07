@@ -9,8 +9,7 @@ private:
 
 	bool isSetBalanceExecute = false;
 public:
-	//BankAccount();
-
+	BankAccount();
 	BankAccount(double b, std::string o, std::string c);
 
 	double GetBalance();

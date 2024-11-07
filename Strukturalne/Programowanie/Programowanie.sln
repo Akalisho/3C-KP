@@ -67,6 +67,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadAndWriteToFilesConsoleA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringConsoleApplication", "StringConsoleApplication\StringConsoleApplication.vcxproj", "{F3EA66AC-0C50-4442-89A7-71527112564B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceConsoleApplication", "InheritanceConsoleApplication\InheritanceConsoleApplication.vcxproj", "{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -243,6 +245,14 @@ Global
 		{F3EA66AC-0C50-4442-89A7-71527112564B}.Release|x64.Build.0 = Release|x64
 		{F3EA66AC-0C50-4442-89A7-71527112564B}.Release|x86.ActiveCfg = Release|Win32
 		{F3EA66AC-0C50-4442-89A7-71527112564B}.Release|x86.Build.0 = Release|Win32
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Debug|x64.ActiveCfg = Debug|x64
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Debug|x64.Build.0 = Debug|x64
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Debug|x86.ActiveCfg = Debug|Win32
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Debug|x86.Build.0 = Debug|Win32
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Release|x64.ActiveCfg = Release|x64
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Release|x64.Build.0 = Release|x64
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Release|x86.ActiveCfg = Release|Win32
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,6 +288,7 @@ Global
 		{D765E6BD-7194-42A3-BF27-14099C777E6E} = {766F8214-1615-4B3B-9466-465F4F1FBA2C}
 		{C358B34C-6BF6-4864-8ED6-0BB5977A92AD} = {766F8214-1615-4B3B-9466-465F4F1FBA2C}
 		{F3EA66AC-0C50-4442-89A7-71527112564B} = {766F8214-1615-4B3B-9466-465F4F1FBA2C}
+		{F9AB2D8A-4154-4B00-9E41-707D95E0FA1B} = {766F8214-1615-4B3B-9466-465F4F1FBA2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F097B48F-B591-4473-B32E-9C089190C89B}
