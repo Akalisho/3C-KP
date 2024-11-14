@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\FirstObjectConsoleApplication\BankAccount.cpp" />
+    <ClCompile Include="BankAccount.cpp" />
     <ClCompile Include="InheritanceConsoleApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\FirstObjectConsoleApplication\BankAccount.h" />
+    <ClInclude Include="BankAccount.h" />
     <ClInclude Include="SavingBankAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
