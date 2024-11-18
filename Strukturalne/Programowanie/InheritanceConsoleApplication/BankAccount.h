@@ -1,4 +1,4 @@
-#pragma once
+
 
 class BankAccount
 {
@@ -8,16 +8,18 @@ protected:
 	std::string currency;
 
 	bool isSetBalanceExecute = false;
+
+	void SetBalance(double b);
+
 public:
-	//BankAccount();
+	BankAccount();
 	BankAccount(double b, std::string o, std::string c);
 
 	double GetBalance();
-	void SetBalance(double b);
 
 	void AccountInformation();
 
 	void DepositToAccount(double amount);
 	bool WithdrawalFromAccount(double amount);
-	void TransferBetweenAccounts(BankAccount& targetAccount, double amount);
+	void TransferBetweenAccounts(BankAccount& targetAcccount, double amount);
 };

@@ -1,13 +1,12 @@
-#include "BankAccount.h"
+﻿#include "BankAccount.h"
 
 class SavingBankAccount : public BankAccount
 {
-public:
+protected:
 	double interestRate;
-
 public:
 
-	SavingBankAccount()// : BankAccount - to jest domy�lne
+	SavingBankAccount()// : BankAccount() //to jest domyœlne
 	{
 		interestRate = 0.1;
 	}
@@ -20,5 +19,11 @@ public:
 	void CalculateInterestRate()
 	{
 		balance = balance + balance * interestRate;
+	}
+
+	void AccountInformation()
+	{
+		BankAccount::AccountInformation();
+		std::cout << "Oprocentowanie: " << interestRate << "\n";
 	}
 };

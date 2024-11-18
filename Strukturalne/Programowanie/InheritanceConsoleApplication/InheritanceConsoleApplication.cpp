@@ -3,11 +3,6 @@
 
 int main()
 {
-    SavingBankAccount savingBankAccount;
-    savingBankAccount.DepositToAccount(1000);
+    SavingBankAccount savingBankAccount(100, "Ewa Nowak", "z³", 0.12);
     savingBankAccount.AccountInformation();
-    savingBankAccount.CalculateInterestRate();
-    savingBankAccount.AccountInformation();
-    
-    
 }

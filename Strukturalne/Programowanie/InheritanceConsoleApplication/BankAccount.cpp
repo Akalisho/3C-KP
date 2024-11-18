@@ -1,41 +1,42 @@
-#include <iostream>
+﻿#include <iostream>
 #include "BankAccount.h"
 
-void BankAccount()
+BankAccount::BankAccount()
 {
-	balance = 7200;
-	owner = "Jan Kowalski";
-	currency = "z�";
+	balance = 1000;
+	owner = "Nieznany";
+	currency = "zł";
 }
 
-void BankAccount(double b, std::string o, std::string c)
+BankAccount::BankAccount(double b, std::string o, std::string c)
 {
 	//balance = b;
 	SetBalance(b);
 	owner = o;
 	currency = c;
-};
+}
 
 void BankAccount::SetBalance(double b)
 {
 	if (b >= 0
-		&& isSetBalanceExecute == false)
+		&& isSetBalanceExecute == false) //aby mozna by³o tylko raz wykonaæ kod
 	{
 		balance = b;
+
 		isSetBalanceExecute = true;
 	}
 }
 
 double BankAccount::GetBalance()
 {
-	//instrukcje zabezpieczaj�ce
+	//instrukcje zabezpieczaj¹ce
 	return balance;
 }
 
 void BankAccount::AccountInformation()
 {
 	std::cout << "Informacja o koncie bankowym\n";
-	std::cout << "W?a?ciciel: " << owner << "\n";
+	std::cout << "W³aœciciel: " << owner << "\n";
 	std::cout << "Saldo: " << balance << " " << currency << "\n";
 }
 
