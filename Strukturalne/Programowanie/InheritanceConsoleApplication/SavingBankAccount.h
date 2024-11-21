@@ -16,14 +16,6 @@ public:
 		interestRate = ir;
 	}
 
-	void CalculateInterestRate()
-	{
-		balance = balance + balance * interestRate;
-	}
-
-	void AccountInformation()
-	{
-		BankAccount::AccountInformation();
-		std::cout << "Oprocentowanie: " << interestRate << "\n";
-	}
+	void CalculateInterestRate();
+	void AccountInformation();
 };
