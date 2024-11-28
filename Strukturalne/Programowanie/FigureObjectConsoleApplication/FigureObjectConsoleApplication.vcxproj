@@ -127,11 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Figure.cpp" />
     <ClCompile Include="FigureObjectConsoleApplication.cpp" />
+    <ClCompile Include="Parallelogram.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Rhombus.cpp" />
+    <ClCompile Include="Square.cpp" />
+    <ClCompile Include="Trapeze.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Figures.h" />
+    <ClInclude Include="Parallelogram.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Rhombus.h" />
+    <ClInclude Include="Square.h" />
+    <ClInclude Include="Trapeze.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
