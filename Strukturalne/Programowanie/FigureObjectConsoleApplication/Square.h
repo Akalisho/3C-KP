@@ -1,12 +1,13 @@
 #pragma once
 #include "Rectangle.h"
-	class Square : public Rectangle
-	{
-	private:
-	protected:
-	public:
-		Square(int a, std::string n = "Kwadrat") :Rectangle(a, a, n)
-		{
-		}
-	};
+
+class Square : public Rectangle
+{
+private:
+
+protected:
+
+public:
+	Square(int a, std::string n = "Kwadrat");
+};
 

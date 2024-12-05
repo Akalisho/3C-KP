@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="FigureObjectConsoleApplication.cpp" />
     <ClCompile Include="Parallelogram.cpp" />
+    <ClCompile Include="Quadrangle.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Rhombus.cpp" />
     <ClCompile Include="Square.cpp" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Parallelogram.h" />
+    <ClInclude Include="Quadrangle.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Rhombus.h" />
     <ClInclude Include="Square.h" />
