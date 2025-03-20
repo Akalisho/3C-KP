@@ -26,10 +26,12 @@ int main()
 	std::vector<int> numbers;
 
 	int num;
+	int firstNumber = 0;
+	
 	while (file >> num)
-		numbers.push_back(num);
+		numbers.push_back(num); 
 
-	/*
+	/* 
 	for (int i = 0; i < numbers.size(); i++)
 	{
 		std::cout << numbers[i] << ", ";
@@ -55,7 +57,6 @@ int main()
 		do
 		{
 			firstDigit = tmpNum % 10;
-			std::cout << firstDigit << "\n";
 			tmpNum = tmpNum / 10;
 		} while (tmpNum != 0);
 
@@ -64,5 +65,7 @@ int main()
 			count++;
 		}
 	}
-	std::cout << count << "\n";
+
+	firstNumber = numbers[0];
+	std::cout << count << " " << firstNumber << "\n";
 }
