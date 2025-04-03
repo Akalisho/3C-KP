@@ -26,18 +26,10 @@ int main()
 		
 		std::cout << "Zadanie 4.1:\n";
 
-		int reverseNumbers(int num)
-		{
-			int reversedNumber = 0;
-			while (num > 0)
-			{
-				reversed
-			}
-		}
-
+		int reversedNum = 0;
 		for (int num : numbers)
 		{
-			
+
 		}
 	}
 }
