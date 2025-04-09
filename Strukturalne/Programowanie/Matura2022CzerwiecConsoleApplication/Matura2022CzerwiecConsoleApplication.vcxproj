@@ -133,6 +133,9 @@
     <Text Include="liczby.txt" />
     <Text Include="przyklad.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Matura2022CzerwiecConsoleApplication.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
