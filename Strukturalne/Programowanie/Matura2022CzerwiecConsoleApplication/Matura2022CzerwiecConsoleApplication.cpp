@@ -15,6 +15,19 @@ int reverseNumber(int num)
 	return reversed;
 }
 
+bool isNumberPrime(int number)
+{
+	if (number < 2)
+		return false;
+
+	for (int i = 2; i * i <= number; i++)
+	{
+		if (number % i == 0)
+			return false;	
+	}
+	return true;
+}
+
 int main()
 {
 	std::ifstream file("przyklad.txt");
@@ -86,7 +99,20 @@ int main()
 
 		std::cout << "Zadanie 4.3:\n";
 
+		for (int num : numbers)
+		{
+			if (isNumberPrime(num))
+			{
+				std::cout << num << "\n";
+			}
+			
+			int reversedNum = reverseNumber(num);
 
+			if (isNumberPrime(reversedNum))
+			{
+				std::cout << reversedNum << "\n";
+			}
+		}
 	}
 }
 
