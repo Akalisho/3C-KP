@@ -23,7 +23,7 @@ bool isNumberPrime(int number)
 	for (int i = 2; i * i <= number; i++)
 	{
 		if (number % i == 0)
-			return false;	
+			return false;
 	}
 	return true;
 }
@@ -35,7 +35,6 @@ int main()
 	if (file.is_open())
 	{
 		std::vector<int> numbers;
-		std::vector<int> reversedDividedBy17;
 
 		int num;
 		int firstNumber = 0;
@@ -55,6 +54,8 @@ int main()
 
 		std::cout << "Zadanie 4.1:\n";
 
+		std::vector<int> reversedDividedBy17;
+
 		for (int num : numbers)
 		{
 			int reversedNum = reverseNumber(num);
@@ -65,7 +66,7 @@ int main()
 			}
 		}
 
-		std::cout << "\nLiczby odwrocone podzielne przez 17: \n";
+		std::cout << "\n Liczby odwrocone podzielne przez 17: \n";
 
 		for (int num : reversedDividedBy17)
 		{
@@ -107,6 +108,26 @@ int main()
 			{
 				std::cout << num << "\n";
 			}
+		}
+
+		std::cout << "Zadanie 4.4:\n";
+
+		std::vector<int> counters; 
+
+		for (int num : numbers) 
+		{
+			counters[num]++; 
+		}
+
+		int diffNumbers = 0;
+		int repeatTwoTimes = 0;
+
+		for (int counter : counters) 
+		{
+			if (counter != 0)
+				diffNumbers++;
+			if (counter == 2)
+				repeatTwoTimes++;
 		}
 	}
 }
