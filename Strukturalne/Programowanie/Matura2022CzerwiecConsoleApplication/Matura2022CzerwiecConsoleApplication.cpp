@@ -101,16 +101,11 @@ int main()
 
 		for (int num : numbers)
 		{
-			if (isNumberPrime(num))
-			{
-				std::cout << num << "\n";
-			}
-			
 			int reversedNum = reverseNumber(num);
 
-			if (isNumberPrime(reversedNum))
+			if (isNumberPrime(num) && isNumberPrime(reversedNum))
 			{
-				std::cout << reversedNum << "\n";
+				std::cout << num << "\n";
 			}
 		}
 	}
