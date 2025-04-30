@@ -3,6 +3,15 @@
 #include <Windows.h>
 #include "MainGame.h"
 
+
+/*
+
+Zasady do wprowadzenia:
+KISS - trzymaj prostote debilu - se uprosc kod
+SOLID - S - pojedyncza odpowiedzialnosc - utworz funkcje odpowiadajace za jakis kod
+
+
+*/
 int main()
 {
 	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
@@ -12,12 +21,42 @@ int main()
 
 /*
 * Zrobiæ poziomy trudnoœci.
+* Zrobilem ale dokonczyc trzeba - secret difficulty, ¿ycia Tung Tunga zmienic na 1, itp.
 */
 
 void mainGame()
 {
 	const int LOWER_RANGE = 1;
-	const int UPPER_RANGE = 100;
+	int UPPER_RANGE = 100;
+	char difficulty = 0;
+	std::cout << "------------------------------------------\n";
+	std::cout << "Podaj poziom trudnoœci:\n";
+	std::cout << "£atwy: 1\n";
+	std::cout << "Œredni: 2\n";
+	std::cout << "Trudny: 3\n";
+	std::cout << "------------------------------------------\n";
+	std::cin >> difficulty;
+	switch (difficulty)
+	{
+	case '1':
+		UPPER_RANGE = 100;
+		break;
+	case '2':
+		UPPER_RANGE = 200;
+		break;
+	case '3':
+		UPPER_RANGE = 500;
+		break;
+	case 'T':
+		UPPER_RANGE = 3;
+		break;
+	default:
+		UPPER_RANGE = 12000000;
+		break;
+	}
+
+	system("cls");
+
 	srand(time(NULL));
 	int randomNumber = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
 	int numberFromUser;
@@ -47,6 +86,11 @@ void mainGame()
 
 		std::cout << "Podaj liczbe: \n";
 		std::cin >> numberFromUser;
+
+		if (numberFromUser > UPPER_RANGE || numberFromUser < LOWER_RANGE)
+			break;
+
+		std::cin.ignore(255, '\n');
 		yourAttempts++;
 
 		if (numberFromUser < randomNumber)
@@ -79,8 +123,7 @@ void mainGame()
 			std::cout << "Mniej.\n";
 			continue;
 		}
-
-		if (numberFromUser < randomNumber)
+		else
 		{
 			currentLives--;
 			std::cout << "Twoje ¯ycia: " << currentLives << "\n";
@@ -96,13 +139,26 @@ void mainGame()
 
 	if (currentLives < 1)
 	{
-		std::cout << " ";
+		std::cout << "------------------------------------------\n";
+		std::cout << "Przegra³eœ!!! IdŸ sie powieœ bez drzewa >:(\n";
+		std::cout << "Numer do odgadniêcia: " << randomNumber << "\n";
+		std::cout << "------------------------------------------\n";
 	}
 	else
 	{
-		std::cout << "------------------------------------------\n";
-		std::cout << "Wygra³eœ!!! Twoje ¯ycia: " << currentLives << "\n";
-		std::cout << "Numer do odgadniêcia: " << randomNumber << "\n";
-		std::cout << "------------------------------------------\n";
+		if (numberFromUser > UPPER_RANGE || numberFromUser < LOWER_RANGE)
+		{
+			std::cout << "------------------------------------------\n";
+			std::cout << "Podales/as liczbê z poza zakresu trudnoœci!\n";
+			std::cout << "Zrzuæ siê ze schodów, Pozdrawiam <3\n";
+			std::cout << "------------------------------------------\n";
+		}
+		else
+		{
+			std::cout << "------------------------------------------\n";
+			std::cout << "Wygra³eœ!!! Twoje ¯ycia: " << currentLives << "\n";
+			std::cout << "Numer do odgadniêcia: " << randomNumber << "\n";
+			std::cout << "------------------------------------------\n";
+		}
 	}
 }

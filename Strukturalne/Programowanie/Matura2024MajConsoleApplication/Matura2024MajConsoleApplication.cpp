@@ -96,34 +96,34 @@ int main()
 	}
 	else
 		std::cout << "Plik nie poprawnie otwarty!!!\n";
-	
+
 	file.close();
 
 	std::ifstream file2("skrot2_przyklad.txt");
 
 	if (file2.is_open())
 	{
-		std::vector<int> numbers2; 
+		std::vector<int> numbers2;
 
 		int num2;
-		 
-		while (file2 >> num2) 
-			numbers2.push_back(num2); 
+
+		while (file2 >> num2)
+			numbers2.push_back(num2);
 
 		std::cout << "\n\nZadanie 3.3:\n";
 
 		std::cout << "Odczytane liczby:\n";
 		for (int num2 : numbers2)
 		{
-			std::cout << num2 << ", "; 
+			std::cout << num2 << ", ";
 		}
 		std::cout << "\n";
 
 		std::cout << "Nieparzyste skroty liczb z NWD = 7:\n";
 
-		for (int num2 : numbers2) 
+		for (int num2 : numbers2)
 		{
-			int result = oddNumberAbbreviation(num2); 
+			int result = oddNumberAbbreviation(num2);
 
 			int greatestCommonDevider = GCD(num2, result);
 			if (greatestCommonDevider == 7)
