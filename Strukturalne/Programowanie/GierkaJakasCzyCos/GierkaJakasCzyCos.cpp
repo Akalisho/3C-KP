@@ -26,6 +26,7 @@ int main()
 
 void mainGame()
 {
+
 	const int LOWER_RANGE = 1;
 	int UPPER_RANGE = 100;
 	char difficulty = 0;
