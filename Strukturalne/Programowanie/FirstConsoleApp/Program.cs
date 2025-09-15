@@ -32,10 +32,10 @@ void ParametrTest_v2(ref int p)
     Console.WriteLine($"Parametr w ParametrTest_v2 {p}");
 }
 
-void ParametrTest_v3(ref int p)
+void ParametrTest_v3(out int p)
 {
     //Console.WriteLine($"Parametr w ParametrTest_v2 {p}");
-    p++;
+    p = 19;
     Console.WriteLine($"Parametr w ParametrTest_v2 {p}");
 }
 
@@ -51,8 +51,19 @@ ParametrTest_v2(ref firstNumber);
 Console.WriteLine($"firstNumber po {firstNumber}");
 //ParametrTest_v2(99);
 
-firstNumber = 15;
-Console.WriteLine($"firstNumber przed {firstNumber}");
-ParametrTest_v3(ref firstNumber);
-Console.WriteLine($"firstNumber po {firstNumber}");
+int thirdNumber;
+//Console.WriteLine($"firstNumber przed {thirdNumber}");
+ParametrTest_v3(out thirdNumber);
+Console.WriteLine($"firstNumber po {thirdNumber}");
 //ParametrTest_v3(99);
+
+//-----------------------------------------------------------
+
+string firstStrNumber = "67";
+
+int firstConvertNumber = int.Parse(firstStrNumber);
+Console.WriteLine($"Po konwersji {firstConvertNumber}");
+
+if (int.TryParse(firstStrNumber, out int secondConvertNumber))
+    Console.WriteLine($"Udało się skonwertować {secondConvertNumber}");
+
