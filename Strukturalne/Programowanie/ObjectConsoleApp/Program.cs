@@ -46,3 +46,34 @@ secondPointClass.x = 29;
 Console.WriteLine($"firstPointClass ({firstPointClass.x} , {firstPointClass.y})");
 Console.WriteLine($"secondPointClass ({secondPointClass.x} , {secondPointClass.y})");
 
+void ParametrTestClass_v1(PointClass pc)
+{
+    Console.WriteLine($"ParametrTestClass_v1 ({pc.x} , {pc.y})");
+    pc.x = 99;
+    Console.WriteLine($"ParametrTestClass_v1 ({pc.x} , {pc.y})");
+}
+
+void ParametrTestClass_v2(PointClass pc)
+{
+    Console.WriteLine($"ParametrTestClass_v2 ({pc.x} , {pc.y})");
+    pc = new PointClass();
+    pc.x = 45;
+    Console.WriteLine($"ParametrTestClass_v2 ({pc.x} , {pc.y})");
+}
+
+void ParametrTestClass_v3(ref PointClass pc)
+{
+    Console.WriteLine($"ParametrTestClass_v3 ({pc.x} , {pc.y})");
+    pc = new PointClass();
+    pc.x = 45;
+    Console.WriteLine($"ParametrTestClass_v3 ({pc.x} , {pc.y})");
+}
+
+ParametrTestClass_v1(firstPointClass);
+Console.WriteLine($"firstPointStruct ({firstPointClass.x} , {firstPointClass.y})");
+
+ParametrTestClass_v2(firstPointClass);
+Console.WriteLine($"firstPointStruct ({firstPointClass.x} , {firstPointClass.y})");
+
+ParametrTestClass_v3(ref firstPointClass);
+Console.WriteLine($"firstPointStruct ({firstPointClass.x} , {firstPointClass.y})");
