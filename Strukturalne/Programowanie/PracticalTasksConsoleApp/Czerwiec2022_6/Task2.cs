@@ -49,7 +49,8 @@ internal class Osoba
 * nazwa funkcji: Wypisz
 * opis funkcji: Wypisuje nazwę podaną w zmiennej argument i imie ,w przypadku gdy imie bedzie puste wypisze brak danych  
 * parametry:  argument - imie podane przez użytkownika do wyświetlenia w funkcji
-* zwracany typ i opis: typ: string
+* zwracany typ i opis: typ: string - albo "brak danych" (w przypadku pustej zmiennej imie)
+*                       albo "Cześć {argument}, mam na imie {imie}"
 * autor: 01234567890
 */
 
