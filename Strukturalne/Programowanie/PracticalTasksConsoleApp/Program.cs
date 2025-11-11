@@ -15,3 +15,6 @@ using PracticalTasksConsoleApp.Styczeń2025_1;
 
 //PracticalTasksConsoleApp.Styczeń2025_1.Task4 task4 = new PracticalTasksConsoleApp.Styczeń2025_1.Task4();
 //task4.Task();
+
+PracticalTasksConsoleApp.Styczeń2023_1.Task5 task5 = new PracticalTasksConsoleApp.Styczeń2023_1.Task5();
+task5.Task();
