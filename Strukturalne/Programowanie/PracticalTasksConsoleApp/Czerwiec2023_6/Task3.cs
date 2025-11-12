@@ -24,6 +24,19 @@ internal class Task3
     }
 }
 
+/*
+* nazwa klasy: Film
+* pola: tytul - przechowuje tytul typu statycznego string
+*       liczbaWypozyczen - przechowuje liczbę wypożyczeń wprowadzonego filmu
+* metody:   SetTytul, nic nie zwraca - nadpisuje wprowadzony nowy tytul na pole klasy tytul jeżeli on jest mniejszy bądź równy 20,
+*           w przeciwnym razie wyświetla komunikat "Tytuł nie może przekraczać 20 znaków!"
+*           GetTytul, zwraca tytul - zwraca wartość z pola tytul
+*           GetLiczbaWypozyczen, zwraca liczbę wypożyczeń - zwraca wartość z pola liczbaWypozyczen
+*           InkrementujWypozyczenia, nic nie zwraca - inkrementuje o 1 wartość pola liczbaWypozyczen
+* informacje: Klasa ma za zadanie utworzenia części logiki systemu wirtualnej wypożyczalni filmów.
+*             Zawiera metody get i set oraz inkrementującą liczbę wypożyczeń wprowadzonego filmu. 
+* autor: 01234567890
+*/
 internal class Film
 {
     protected string tytul;

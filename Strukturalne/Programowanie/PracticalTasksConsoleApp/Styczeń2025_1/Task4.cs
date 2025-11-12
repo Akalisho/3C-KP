@@ -5,6 +5,13 @@ internal class Task4
 {
     class Urzadzenie
     {
+        /*
+        * nazwa: Komunikat
+        * opis: wyświetla sparametrowaną tresc
+        * parametry: tresc, tresc polecenia sparametryzowana danego urządzenia, np. "Odkurzacz wlaczono"
+        * zwracany typ i opis: nic nie zwraca, wyświetla tresc polecenia sparametryzowaną danego urządzenia
+        * autor: 01234567890
+        */
         public void Komunikat(string tresc)
         {
             Console.WriteLine(tresc);
@@ -17,7 +24,7 @@ internal class Task4
 
         public void UstawProgram(int numer)
         {
-            if (numer >= 1 && numer <= 12)
+            if (numer > 0 && numer <= 12)
             {
                 numerProgramu = numer;
                 Komunikat("Program został ustawiony");
@@ -36,7 +43,7 @@ internal class Task4
 
         public void On()
         {
-            if (!wlaczony)
+            if (wlaczony == false)
             {
                 wlaczony = true;
                 Komunikat("Odkurzacz włączono");
@@ -45,7 +52,7 @@ internal class Task4
 
         public void Off()
         {
-            if (wlaczony)
+            if (wlaczony == true)
             {
                 wlaczony = false;
                 Komunikat("Odkurzacz wyłączono");

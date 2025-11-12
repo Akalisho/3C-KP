@@ -5,16 +5,14 @@ namespace PracticalTasksConsoleApp.Styczeń2023_1
     {
         public void Task()
         {
-            // Utworzenie dwóch notatek i test działania
             Notatka n1 = new Notatka("Zakupy", "Kupić mleko, chleb i masło");
-            Notatka n2 = new Notatka("Plan dnia", "Nauka, trening, odpoczynek");
-
-            Console.WriteLine("Wyświetlenie notatek:\n");
             n1.WyswietlNotatke();
-            n2.WyswietlNotatke();
-
-            Console.WriteLine("\nDiagnostyka wszystkich pól:\n");
             n1.Diagnostyka();
+
+            Console.WriteLine();
+
+            Notatka n2 = new Notatka("Plan dnia", "Nauka, trening, odpoczynek");
+            n2.WyswietlNotatke();
             n2.Diagnostyka();
         }
     }
@@ -36,7 +34,7 @@ namespace PracticalTasksConsoleApp.Styczeń2023_1
 
         public void WyswietlNotatke()
         {
-            Console.WriteLine($"Tytuł: {tytul}\nTreść: {tresc}\n");
+            Console.WriteLine($"Tytuł: {tytul}\nTreść: {tresc}");
         }
 
         public void Diagnostyka()
