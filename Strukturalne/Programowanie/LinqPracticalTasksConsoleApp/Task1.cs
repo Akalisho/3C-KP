@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LinqPracticalTasksConsoleApp
 {
-    /*
+/*
 ========================================
 == POZIOM 1 – PODSTAWOWY ==
 ========================================
@@ -21,8 +22,8 @@ namespace LinqPracticalTasksConsoleApp
 8. Oblicz średnią pensję wszystkich osób.
 9. Znajdź najmłodszą osobę.
 10. Sprawdź, czy jest ktoś z Gdańska.
-
-
+*/
+/*
 ========================================
 == POZIOM 2 – ŚREDNI ==
 ========================================
@@ -37,8 +38,8 @@ namespace LinqPracticalTasksConsoleApp
 18. Policz, ile jest kobiet.
 19. Znajdź osoby, które zarabiają więcej niż średnia pensja.
 20. Znajdź najstarszą osobę z Krakowa.
-
-
+ */
+/*
 ========================================
 == POZIOM 3 – ZAAWANSOWANY ==
 ========================================
@@ -51,8 +52,8 @@ namespace LinqPracticalTasksConsoleApp
 27. Znajdź osobę o największej pensji.
 28. Znajdź osobę o najmniejszej pensji.
 29. Wypisz osoby, które mają taki sam wiek jak najstarsza osoba.
-
-
+*/
+/*
 ========================================
 == POZIOM 4 – EKSTRA / DLA CHĘTNYCH ==
 ========================================
@@ -85,7 +86,7 @@ namespace LinqPracticalTasksConsoleApp
             new() { Id=7, FirstName="Iga",   LastName="Kowal",     Age=31, Gender=Gender.Female, City="Kraków", Salary=9900m,  Skills=["Go", "Kubernetes"] },
             new() { Id=8, FirstName="Tomek", LastName="Sikora",    Age=29, Gender=Gender.Male,   City="Kielce", Salary=8800m,  Skills=["C#", "MAUI", "Bluetooth"] },
         };
-
+            /*
             // === POZIOM 1 ===
 
             // Zadanie 1
@@ -114,10 +115,130 @@ namespace LinqPracticalTasksConsoleApp
 
             // Zadanie 7
             var q7 = people.Count(p => p.City == "Warszawa");
-            Print("Zadanie 7", q7);
+            Console.WriteLine("=== Zadanie 7 ===");
+            Console.WriteLine($"Ilosc osob mieszkajacych w Warszawie: {q7}\n");
 
             // Zadanie 8
+            var q8 = people.Average(p => p.Salary);
+            Console.WriteLine("=== Zadanie 8 ===");
+            Console.WriteLine($"Srednia wyplata pracownikow: {q8}");
 
+            // Zadanie 9
+            var wiekNajmlodzejOsoby = people.Min(p => p.Age);
+            var q9 = people.Where(p => p.Age == wiekNajmlodzejOsoby);
+            Print("Zadanie 9", q9);
+            
+            // Zadanie 10
+            var czyKtosZGdanska = people.Any(p => p.City == "Gdańsk");
+            if (czyKtosZGdanska)
+            {
+                var q10 = people.Where(p => p.City == "Gdańsk");
+                Print("Zadanie 10", q10);
+            }
+            else
+            {
+                Console.WriteLine("=== Zadanie 10 ===");
+                Console.WriteLine("Nikt nie jest z Gdanska");
+            }
+            */
+            /*
+            // === POZIOM 2 ===
+
+            // Zadanie 11
+            var q11 = people.OrderBy(p => p.City).ThenByDescending(p => p.Salary);
+            Print("Zadanie 11", q11);
+
+            // Zadanie 12
+            var q12 = people.Where(p => p.Age >= 25 && p.Age <= 35).OrderByDescending(p => p.Age);
+            Print("Zadanie 12", q12);
+
+            // Zadanie 13
+            var q13 = people.Where(p => p.City == "Kielce").Sum(p => p.Salary);
+            Console.WriteLine("=== Zadanie 13 ===");
+            Console.WriteLine($"Suma wyplat pracownikow z Kielc: {q13}");
+
+            // Zadanie 14
+            var q14 = people.Where(p => p.Salary > 10000).First();
+            Console.WriteLine("=== Zadanie 14 ===");
+            Console.WriteLine($"Pierwsza osoba z pensja ponad 10000: {q14}");
+
+            // Zadanie 15
+            var q15 = people.OrderBy(p => p.LastName).Last();
+            Console.WriteLine("=== Zadanie 15 ===");
+            Console.WriteLine($"Ostatnia osoba sortowana alfabetycznie po nazwisku: {q15}");
+
+            // Zadanie 16
+            var q16 = people.Select(p => new { Imie = p.FirstName, Nazwisko = p.LastName,  Miasto = "(" + p.City + ")" });
+            Print("Zadanie 16", q16);
+
+            // Zadanie 17
+            var q17 = people.Any(p => p.Age < 18);
+            Console.WriteLine("=== Zadanie 17 ===");
+            if (q17)
+                Console.WriteLine("Istnieje chociaz jedna osoba niepelnoletnia");
+            else
+                Console.WriteLine("Wyglada na to iż wszystkie osoby znajdujace sie w bazie danych pracownikow danego osrodka pracodawczego sa w stanie legalnie napic sie alkoholu");
+
+            // Zadanie 18
+            var q18 = people.Count(p => p.Gender == Gender.Female);
+            Console.WriteLine("=== Zadanie 18 ===");
+            Console.WriteLine($"Ilosc kobiet: {q18}");
+
+            // Zadanie 19
+            var avgSalary = people.Average(p => p.Salary);
+            var q19 = people.Where(p => p.Salary > avgSalary);
+            Print("Zadanie 19", q19);
+
+            // Zadanie 20
+            var q20 = people.Where(p => p.City == "Kraków").OrderByDescending(p => p.Age).First();
+            Console.WriteLine("=== Zadanie 20 ===");
+            Console.WriteLine($"Najstarsza osoba z Krakowa: {q20}");
+            */
+
+            // === POZIOM 3 ===
+
+            // Zadanie 22
+            var q22 = people.Where(p => p.Skills.Contains("C#"));
+            Print("Zadanie 22", q22);
+
+            // Zadanie 23
+            var q23 = people.Where(p => p.Skills.Count() >= 3);
+            Print("Zadanie 23", q23);
+
+            // Zadanie 24
+            var q24 = people.Where(p => p.City == "Warszawa").OrderByDescending(p => p.Age).Select(p => $"{p.FirstName} {p.LastName}, {p.Age} lat, {p.Salary} zł");
+            Print("Zadanie 24", q24);
+
+            // Zadanie 25
+            var q25 = people.Any(p => p.Skills.Contains("Azure"));
+            Console.WriteLine("=== Zadanie 25 ===");
+            if (q25)
+                Console.WriteLine("Istnieje osoba ktora posiada umiejetnosc korzystania z Azure");
+            else
+                Console.WriteLine("Nie ma takiej osoby");
+
+            // Zadanie 26
+            var q26 = people.All(p => p.Salary >= 4000);
+            Console.WriteLine("=== Zadanie 26 ===");
+            if (q26)
+                Console.WriteLine("Wszyscy otrzymuja wyplate powyzej 4000 zl");
+            else
+                Console.WriteLine("Przynajmniej jedna osoba pracujaca zarabia mniej od 4000 zl lub wszyscy nie otrzymuja takiej wartosci rownej 4000 zl i nie moga one utrzymac domu, siebie i 3 dzieci w normalnych warunkach stosunku spoczynku wzgledem srodowiska naturalnego w dzisiejszych czasach z powodu wojen i izraela i inflacji");
+
+            // Zadanie 27
+            var maxSalary = people.Max(p => p.Salary);
+            var q27 = people.Where(p => p.Salary == maxSalary);
+            Print("Zadanie 27", q27);
+
+            // Zadanie 28
+            var minSalary= people.Min(p => p.Salary);
+            var q28 = people.Where(p => p.Salary == minSalary);
+            Print("Zadanie 28", q28);
+
+            // Zadanie 29
+            var oldestPerson = people.Max(p => p.Age);
+            var q29 = people.Where(p => p.Age == oldestPerson);
+            Print("Zadanie 29", q29);
         }
     }
 }
