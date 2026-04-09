@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -194,7 +195,7 @@ namespace LinqPracticalTasksConsoleApp
             Console.WriteLine("=== Zadanie 20 ===");
             Console.WriteLine($"Najstarsza osoba z Krakowa: {q20}");
             */
-
+            /*
             // === POZIOM 3 ===
 
             // Zadanie 22
@@ -239,6 +240,27 @@ namespace LinqPracticalTasksConsoleApp
             var oldestPerson = people.Max(p => p.Age);
             var q29 = people.Where(p => p.Age == oldestPerson);
             Print("Zadanie 29", q29);
+            */
+            // === POZIOM 4 ===
+            // Zadanie 32
+            var q32 = people.OrderByDescending(p => p.Skills.Count());
+            Print("Zadanie 32", q32);
+
+            // Zadanie 33
+            var minQ33 = people.Where(p => p.Salary >= 8000);
+            var mniejQ33 = people.Where(p => p.Salary < 8000);
+            Print("Zadanie 32", "");
+            Print("Zarabiający przynajmniej 8000", minQ33);
+            Print("Zarabiający mniej niż 8000", mniejQ33);
+
+            //Zadanie 35
+            var q35Od20Do29 = people.Where(p => p.Age >= 20 && p.Age <= 29);
+            var q35Od30Do39 = people.Where(p => p.Age >= 30 && p.Age <= 39);
+            var q35Od40Do49 = people.Where(p => p.Age >= 40 && p.Age <= 49);
+            Print("Zadanie 35", "");
+            Print("Osoby przedziału wiekowego 20-29", q35Od20Do29);
+            Print("Osoby przedziału wiekowego 20-29", q35Od30Do39);
+            Print("Osoby przedziału wiekowego 20-29", q35Od40Do49);
         }
     }
 }
