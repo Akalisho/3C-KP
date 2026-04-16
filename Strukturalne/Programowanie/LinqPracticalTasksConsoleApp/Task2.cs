@@ -80,11 +80,11 @@ internal class Task2
         // === POZIOM 1 ===
 
         // Zadanie 1
-        var o1 = orders.Where(p => p.Status == OrderStatus.New);
+        var o1 = orders.Where(o => o.Status == OrderStatus.New);
         Print("Zadanie 1", o1);
 
         // Zadanie 2
-        var o2 = orders.Any(p => p.Product == "Laptop");
+        var o2 = orders.Any(o => o.Product == "Laptop");
         Console.WriteLine("=== Zadanie 2 ===");
         if (o2)
             Console.WriteLine("Istnieje chociaz jedno zamówienie na produkt Laptop");
@@ -92,15 +92,42 @@ internal class Task2
             Console.WriteLine("Nie istnieje ani jedno zamówienie na produkt Laptop");
 
         // Zadanie 3
-        var o3 = orders.Where(p => p.OrderDate <= DateTime.Today && p.OrderDate >= DateTime.Today.AddDays(-30));
+        var o3 = orders.Where(o => o.OrderDate <= DateTime.Today && o.OrderDate >= DateTime.Today.AddDays(-30));
         Print("Zadanie 3", o3);
 
-        // Zadanie 4
-        var o4Customers = orders.Select(p => p.Customer);
-        var o4Price = orders.Select(p => p.PricePerItem);
-        Print("Zadanie 4", o4Customers + "?" + o4Price);
-    
-        // Zadanie 5
+        // === POZIOM 2 ===
 
+        // Zadanie 4
+        var o4 = orders.Select(o => $"{o.Customer} ? {o.PricePerItem * o.Quantity}");
+        Print("Zadanie 4", o4);
+
+        // Zadanie 5
+        var o5 = orders.Where(o => o.Product.Contains('o'));
+        Print("Zadanie 5", o5);
+
+        // Zadanie 6
+        var o6 = orders.Where(o => o.PricePerItem > 1000 && o.Status != OrderStatus.Cancelled);
+        Print("Zadanie 6", o6);
+
+        // Zadanie 7
+        var o7 = orders.All(o => o.OrderDate <= DateTime.Today && o.OrderDate >= DateTime.Today.AddDays(-365));
+        Print("Zadanie 7", "");
+        if (o7)
+        {
+            Console.WriteLine("Wszystkie zamówienia licząc od dzisiejszej daty pochodzą z tego roku.");
+        }
+        else
+        {
+            Console.WriteLine("NIE wszystkie zamówienia licząc od dzisiejszej daty pochodzą z tego roku");
+        }
+
+        // === POZIOM 3 ===
+
+        // Zadanie 8
+        var o8 = orders.Where(o => orders.Where(oo => oo.Customer == o.Customer).DistinctBy(o => o.Product).Count() > 1);
+        Print("Zadanie 8", o8);
+
+        // Zadanie 9
+        var o9 = orders.Select(o => o.OrderDate == (DateTime.Now - o.OrderDate).Days);
     }
 }
